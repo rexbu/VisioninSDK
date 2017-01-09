@@ -1,11 +1,12 @@
-# VisioninDemo
-移动端视频美颜、视频滤镜、人脸实时关键点追踪、人脸实时整形、人脸动态贴纸
+# 简介
+VisioninSDK是一个实现移动端视频美颜、视频滤镜、人脸实时关键点追踪、人脸实时整形、人脸动态贴纸等功能的库。
+
+VisioninSDK是一个跨平台的库，使用C++基于OpenGL ES 2.0实现，VisioninSDK提供了20多个自定义滤镜，VisioninSDK的滤镜结构类似GPUImage。
 
 # 商务合作：
 
 * 手机号: 13911555671
 * QQ 80017290
-* iOS demo请联系商务。
 
 # iOS接入文档
 ## 1. 美颜|滤镜|换背景
@@ -228,7 +229,7 @@ AR互动道具可以在人脸上叠加各种好玩的道具，包括2D和3D道�
 ___注意: 调用此接口不能停止人脸追踪和整形，要停止人脸追踪必须显示的调用stopFaceTracking接口___
 
 # Android接入文档
-## 美颜|滤镜|换背景 
+## 1. 美颜|滤镜|换背景 
 ### 1.1 初始化
 
 ####调用全局初始化方法：
@@ -319,11 +320,6 @@ VisioninSDK支持视频流、预览的镜像设置，可自由组合（不支持
 
 * level的值介于0-1.0之间，为0时不美白，默认值0.5
 
-粉嫩：
-
-`` videoFrame.setToningLevel(level); ``
-
-* level的值介于0-1.0之间，为0时不粉嫩，默认值0.5
 
 _如需关闭美颜，只要把所有参数设置为0即可_
 
@@ -393,14 +389,66 @@ VisioninSDK提供了丰富的滤镜，如果要使用滤镜功能，则调用如
 	videoFrame.closeExtraFilter()
 	
 #### 滤镜列表
-目前支持的滤镜同ios：
+支持的滤镜同ios
 
-* VS_GAUSSIAN_BLUR_FILTER	高斯模糊
-* VS_MEDIAN_BLUR_FILTER		中值滤波，同样可实现模糊效果
-* VS_FROSTED_BLUR_FILTER	类似毛玻璃的模糊效果
-* VS_SATURATION_FILTER		饱和度
+## 2. 人脸关键点追踪
 
-# 变声和混音
+VisioninSDK支持国际通用的68个关键点的实时追踪，坐标序号同iOS
+
+### 2.1 开启
+开启人脸关键点的追踪的功能，首先调用初始化函数，初始化函数只需要调用一次，然后调用VSFacer函数的startFaceTracking
+
+	VSFacer.initialize(Context);
+	VSFacer.startFacerTracking();
+	
+### 2.2 获取关键点
+获取关键点使用VSFacer的getFacerMarks接口
+
+`float[] markers = VSFacer.getFacerMarks(face_index);`
+
+* 如果此时没有人脸，markers返回null；
+* getFacerMarks的参数代表第几个人脸，0代表第一个人脸，依次类推，最多可支持8个人脸
+* 如果有人脸，则markers是一个68*2个元素的数组，markers[0]和marker[1]是第一个关键点的x坐标和y坐标，依次类推
+* 返回的人脸坐标为像素坐标，不是归一化坐标
+
+### 2.3 关闭关键点追踪
+`VSFacer.stopFaceTracking();`
+
+如果不再使用该功能，请及时调用此接口关闭
+
+___注意: 调用此接口可以停止整形功能，但是不能停止贴纸道具___
+## 3. 使用人脸整形
+### 3.1 启动
+`VSFacer.startFacerShaper();`
+
+整形依赖人脸关键点追踪，如果没有开启人脸情况启动整形，则会自动开启人脸追踪
+
+目前的人脸整形包括大眼睛和瘦脸，未来会加入更多的整形功能
+
+### 3.2 关闭整形
+`VSFacer.stopFacerShaper();`
+
+如果不再使用该功能，请及时调用此接口关闭
+
+## 4. 互动道具贴纸
+
+AR互动道具可以在人脸上叠加各种好玩的道具，包括2D和3D道具
+
+### 4.1 设置道具
+设置道具使用VSProps的startProps接口：
+
+`VSProps.startStProps(name);`
+
+name为道具名字
+
+### 4.2 停止使用道具
+如果停止使用道具，则调用stopProps函数
+
+`VSProps.stopStProps();`
+
+___注意: 调用此接口不能停止人脸追踪和整形，要停止人脸追踪必须显示的调用stopFaceTracking接口___
+
+# 5. 变声和混音
 #### 创建VSAudioFrame
 
 VSAudioFrame是VisioninSDK音频功能的入口类，同VSVideoFrame类一样，需要先调用全局初始化方法,再创建VSAudioFrame对象：
