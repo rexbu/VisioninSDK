@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_texture"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".TextureActivity">
+
+    <SurfaceView
+        android:id="@+id/camera_surfaceView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        />
+
+    <Button
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/switchCamera"
+        android:text="切换"
+        android:layout_alignParentLeft="true"
+        />
+    <Button android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/propsButton"
+        android:text="贴纸"
+        android:layout_alignParentTop="true"
+        android:layout_toEndOf="@+id/switchCamera" />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/shaperButton"
+        android:text="大眼瘦脸"
+        android:layout_toEndOf="@id/propsButton"/>
+
+    <TextView
+        android:layout_width="60dp"
+        android:layout_height="40dp"
+        android:id="@+id/smoothText"
+        android:text="磨皮:0.0"
+        android:layout_marginTop="10dp"
+        android:textColor="@android:color/black"
+        android:layout_marginLeft="20dp"
+        android:layout_below="@+id/switchCamera"/>
+
+    <Spinner
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/filterSpinner"
+        android:layout_alignBaseline="@+id/shaperButton"
+        android:layout_alignBottom="@+id/shaperButton"
+        android:layout_toEndOf="@+id/shaperButton"
+        android:entries="@array/filter_name"
+        android:background="@android:color/holo_orange_dark"
+        />
+
+    <SeekBar
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:id="@+id/smoothValueBar"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true" />
+
+</RelativeLayout>

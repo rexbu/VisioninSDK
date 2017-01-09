@@ -1,0 +1,450 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C80963CB1D9629FD00C7A318 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C80963CA1D9629FD00C7A318 /* main.m */; };
+		C80963CE1D9629FD00C7A318 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C80963CD1D9629FD00C7A318 /* AppDelegate.m */; };
+		C80963D41D9629FD00C7A318 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C80963D21D9629FD00C7A318 /* Main.storyboard */; };
+		C80963D61D9629FD00C7A318 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C80963D51D9629FD00C7A318 /* Assets.xcassets */; };
+		C80963D91D9629FD00C7A318 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C80963D71D9629FD00C7A318 /* LaunchScreen.storyboard */; };
+		C80963E71D962AB400C7A318 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C80963E61D962AB400C7A318 /* MediaPlayer.framework */; };
+		C80963E91D962ABC00C7A318 /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C80963E81D962ABC00C7A318 /* CoreImage.framework */; };
+		C80963EB1D962AC600C7A318 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C80963EA1D962AC600C7A318 /* CoreMedia.framework */; };
+		C80963ED1D962ACC00C7A318 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C80963EC1D962ACC00C7A318 /* CoreGraphics.framework */; };
+		C80963EF1D962AD300C7A318 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C80963EE1D962AD300C7A318 /* Foundation.framework */; };
+		C80963F11D962ADA00C7A318 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C80963F01D962ADA00C7A318 /* AVFoundation.framework */; };
+		C80963F31D962AE300C7A318 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C80963F21D962AE300C7A318 /* UIKit.framework */; };
+		C80963F51D962AEC00C7A318 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C80963F41D962AEC00C7A318 /* QuartzCore.framework */; };
+		C80963F71D962AF300C7A318 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C80963F61D962AF300C7A318 /* OpenGLES.framework */; };
+		C80963F91D962AFB00C7A318 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C80963F81D962AFB00C7A318 /* CoreVideo.framework */; };
+		C80963FB1D962B2200C7A318 /* libc++.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C80963FA1D962B2200C7A318 /* libc++.1.dylib */; };
+		C80963FD1D962B3D00C7A318 /* libstdc++.6.0.9.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C80963FC1D962B3D00C7A318 /* libstdc++.6.0.9.dylib */; };
+		C80963FF1D962B5400C7A318 /* libz.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C80963FE1D962B5300C7A318 /* libz.1.dylib */; };
+		C809640A1D962B6800C7A318 /* libVisionin.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C80964021D962B6800C7A318 /* libVisionin.a */; };
+		C81908951DF96C8E00637CB1 /* libcjson.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C81908941DF96C8E00637CB1 /* libcjson.a */; };
+		C81908991DF96CF700637CB1 /* libcrypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C81908961DF96CF700637CB1 /* libcrypto.a */; };
+		C819089A1DF96CF700637CB1 /* libcurl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C81908971DF96CF700637CB1 /* libcurl.a */; };
+		C819089B1DF96CF700637CB1 /* libssl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C81908981DF96CF700637CB1 /* libssl.a */; };
+		C81908B31DFADC3A00637CB1 /* facer.model in Resources */ = {isa = PBXBuildFile; fileRef = C81908B21DFADC3A00637CB1 /* facer.model */; };
+		C825692F1DC74A5C00944023 /* libMobileCross.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C825692E1DC74A5C00944023 /* libMobileCross.a */; };
+		C82569311DC74A6A00944023 /* VSVideoCamera.m in Sources */ = {isa = PBXBuildFile; fileRef = C82569301DC74A6A00944023 /* VSVideoCamera.m */; };
+		C8BAC4B11E0135480086A92D /* rabbit.zip in Resources */ = {isa = PBXBuildFile; fileRef = C8BAC4B01E0135480086A92D /* rabbit.zip */; };
+		C8BAC4B31E0135860086A92D /* visionin.res in Resources */ = {isa = PBXBuildFile; fileRef = C8BAC4B21E0135860086A92D /* visionin.res */; };
+		C8BAC4C01E0149FC0086A92D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C8BAC4BF1E0149FB0086A92D /* ViewController.m */; };
+		C8DE197F1DABE38200D3EEF0 /* libsszip.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C8DE197E1DABE38200D3EEF0 /* libsszip.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		C80963C61D9629FD00C7A318 /* VisioninDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VisioninDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C80963CA1D9629FD00C7A318 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		C80963CC1D9629FD00C7A318 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		C80963CD1D9629FD00C7A318 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		C80963CF1D9629FD00C7A318 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		C80963D31D9629FD00C7A318 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		C80963D51D9629FD00C7A318 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C80963D81D9629FD00C7A318 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		C80963DA1D9629FD00C7A318 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C80963E01D962A9B00C7A318 /* Visionin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Visionin.h; path = VisioninSDK/include/Visionin.h; sourceTree = "<group>"; };
+		C80963E11D962A9B00C7A318 /* VSFacer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSFacer.h; path = VisioninSDK/include/VSFacer.h; sourceTree = "<group>"; };
+		C80963E21D962A9B00C7A318 /* VSProps.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSProps.h; path = VisioninSDK/include/VSProps.h; sourceTree = "<group>"; };
+		C80963E31D962A9B00C7A318 /* VSVideoCamera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSVideoCamera.h; path = VisioninSDK/include/VSVideoCamera.h; sourceTree = "<group>"; };
+		C80963E41D962A9B00C7A318 /* VSVideoFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSVideoFrame.h; path = VisioninSDK/include/VSVideoFrame.h; sourceTree = "<group>"; };
+		C80963E61D962AB400C7A318 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		C80963E81D962ABC00C7A318 /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
+		C80963EA1D962AC600C7A318 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		C80963EC1D962ACC00C7A318 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		C80963EE1D962AD300C7A318 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		C80963F01D962ADA00C7A318 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		C80963F21D962AE300C7A318 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		C80963F41D962AEC00C7A318 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		C80963F61D962AF300C7A318 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		C80963F81D962AFB00C7A318 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
+		C80963FA1D962B2200C7A318 /* libc++.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.1.dylib"; path = "../../../../../usr/lib/libc++.1.dylib"; sourceTree = "<group>"; };
+		C80963FC1D962B3D00C7A318 /* libstdc++.6.0.9.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.6.0.9.dylib"; path = "../../../../../usr/lib/libstdc++.6.0.9.dylib"; sourceTree = "<group>"; };
+		C80963FE1D962B5300C7A318 /* libz.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.dylib; path = ../../../../../usr/lib/libz.1.dylib; sourceTree = "<group>"; };
+		C80964021D962B6800C7A318 /* libVisionin.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libVisionin.a; path = VisioninDemo/VisioninSDK/libVisionin.a; sourceTree = "<group>"; };
+		C81908941DF96C8E00637CB1 /* libcjson.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcjson.a; path = VisioninDemo/VisioninSDK/libcjson.a; sourceTree = "<group>"; };
+		C81908961DF96CF700637CB1 /* libcrypto.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcrypto.a; path = VisioninDemo/VisioninSDK/libcrypto.a; sourceTree = "<group>"; };
+		C81908971DF96CF700637CB1 /* libcurl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcurl.a; path = VisioninDemo/VisioninSDK/libcurl.a; sourceTree = "<group>"; };
+		C81908981DF96CF700637CB1 /* libssl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libssl.a; path = VisioninDemo/VisioninSDK/libssl.a; sourceTree = "<group>"; };
+		C81908B21DFADC3A00637CB1 /* facer.model */ = {isa = PBXFileReference; lastKnownFileType = file; name = facer.model; path = VisioninSDK/facer.model; sourceTree = "<group>"; };
+		C825692E1DC74A5C00944023 /* libMobileCross.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libMobileCross.a; path = VisioninDemo/VisioninSDK/libMobileCross.a; sourceTree = "<group>"; };
+		C82569301DC74A6A00944023 /* VSVideoCamera.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSVideoCamera.m; path = VisioninSDK/VSVideoCamera.m; sourceTree = "<group>"; };
+		C8BAC4B01E0135480086A92D /* rabbit.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = rabbit.zip; sourceTree = "<group>"; };
+		C8BAC4B21E0135860086A92D /* visionin.res */ = {isa = PBXFileReference; lastKnownFileType = file; name = visionin.res; path = VisioninSDK/visionin.res; sourceTree = "<group>"; };
+		C8BAC4BF1E0149FB0086A92D /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		C8DE197E1DABE38200D3EEF0 /* libsszip.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libsszip.a; path = VisioninDemo/VisioninSDK/libsszip.a; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C80963C31D9629FD00C7A318 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C819089B1DF96CF700637CB1 /* libssl.a in Frameworks */,
+				C825692F1DC74A5C00944023 /* libMobileCross.a in Frameworks */,
+				C8DE197F1DABE38200D3EEF0 /* libsszip.a in Frameworks */,
+				C809640A1D962B6800C7A318 /* libVisionin.a in Frameworks */,
+				C80963FF1D962B5400C7A318 /* libz.1.dylib in Frameworks */,
+				C819089A1DF96CF700637CB1 /* libcurl.a in Frameworks */,
+				C80963FD1D962B3D00C7A318 /* libstdc++.6.0.9.dylib in Frameworks */,
+				C80963FB1D962B2200C7A318 /* libc++.1.dylib in Frameworks */,
+				C80963F91D962AFB00C7A318 /* CoreVideo.framework in Frameworks */,
+				C81908951DF96C8E00637CB1 /* libcjson.a in Frameworks */,
+				C81908991DF96CF700637CB1 /* libcrypto.a in Frameworks */,
+				C80963F71D962AF300C7A318 /* OpenGLES.framework in Frameworks */,
+				C80963F51D962AEC00C7A318 /* QuartzCore.framework in Frameworks */,
+				C80963F31D962AE300C7A318 /* UIKit.framework in Frameworks */,
+				C80963F11D962ADA00C7A318 /* AVFoundation.framework in Frameworks */,
+				C80963EF1D962AD300C7A318 /* Foundation.framework in Frameworks */,
+				C80963ED1D962ACC00C7A318 /* CoreGraphics.framework in Frameworks */,
+				C80963EB1D962AC600C7A318 /* CoreMedia.framework in Frameworks */,
+				C80963E91D962ABC00C7A318 /* CoreImage.framework in Frameworks */,
+				C80963E71D962AB400C7A318 /* MediaPlayer.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C80963BD1D9629FD00C7A318 = {
+			isa = PBXGroup;
+			children = (
+				C80963C81D9629FD00C7A318 /* VisioninDemo */,
+				C80963C71D9629FD00C7A318 /* Products */,
+				C80963E51D962AB400C7A318 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		C80963C71D9629FD00C7A318 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C80963C61D9629FD00C7A318 /* VisioninDemo.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C80963C81D9629FD00C7A318 /* VisioninDemo */ = {
+			isa = PBXGroup;
+			children = (
+				C80963CC1D9629FD00C7A318 /* AppDelegate.h */,
+				C80963CF1D9629FD00C7A318 /* ViewController.h */,
+				C80963E01D962A9B00C7A318 /* Visionin.h */,
+				C80963E11D962A9B00C7A318 /* VSFacer.h */,
+				C80963E21D962A9B00C7A318 /* VSProps.h */,
+				C80963E31D962A9B00C7A318 /* VSVideoCamera.h */,
+				C80963E41D962A9B00C7A318 /* VSVideoFrame.h */,
+				C80963CD1D9629FD00C7A318 /* AppDelegate.m */,
+				C8BAC4BF1E0149FB0086A92D /* ViewController.m */,
+				C82569301DC74A6A00944023 /* VSVideoCamera.m */,
+				C81908B21DFADC3A00637CB1 /* facer.model */,
+				C80963DA1D9629FD00C7A318 /* Info.plist */,
+				C8BAC4B21E0135860086A92D /* visionin.res */,
+				C80963D51D9629FD00C7A318 /* Assets.xcassets */,
+				C8BAC4B01E0135480086A92D /* rabbit.zip */,
+				C80963D71D9629FD00C7A318 /* LaunchScreen.storyboard */,
+				C80963D21D9629FD00C7A318 /* Main.storyboard */,
+				C80963C91D9629FD00C7A318 /* Supporting Files */,
+			);
+			path = VisioninDemo;
+			sourceTree = "<group>";
+		};
+		C80963C91D9629FD00C7A318 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				C80963CA1D9629FD00C7A318 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C80963E51D962AB400C7A318 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C81908961DF96CF700637CB1 /* libcrypto.a */,
+				C81908971DF96CF700637CB1 /* libcurl.a */,
+				C81908981DF96CF700637CB1 /* libssl.a */,
+				C81908941DF96C8E00637CB1 /* libcjson.a */,
+				C825692E1DC74A5C00944023 /* libMobileCross.a */,
+				C8DE197E1DABE38200D3EEF0 /* libsszip.a */,
+				C80964021D962B6800C7A318 /* libVisionin.a */,
+				C80963FE1D962B5300C7A318 /* libz.1.dylib */,
+				C80963FC1D962B3D00C7A318 /* libstdc++.6.0.9.dylib */,
+				C80963FA1D962B2200C7A318 /* libc++.1.dylib */,
+				C80963F81D962AFB00C7A318 /* CoreVideo.framework */,
+				C80963F61D962AF300C7A318 /* OpenGLES.framework */,
+				C80963F41D962AEC00C7A318 /* QuartzCore.framework */,
+				C80963F21D962AE300C7A318 /* UIKit.framework */,
+				C80963F01D962ADA00C7A318 /* AVFoundation.framework */,
+				C80963EE1D962AD300C7A318 /* Foundation.framework */,
+				C80963EC1D962ACC00C7A318 /* CoreGraphics.framework */,
+				C80963EA1D962AC600C7A318 /* CoreMedia.framework */,
+				C80963E81D962ABC00C7A318 /* CoreImage.framework */,
+				C80963E61D962AB400C7A318 /* MediaPlayer.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C80963C51D9629FD00C7A318 /* VisioninDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C80963DD1D9629FD00C7A318 /* Build configuration list for PBXNativeTarget "VisioninDemo" */;
+			buildPhases = (
+				C80963C21D9629FD00C7A318 /* Sources */,
+				C80963C31D9629FD00C7A318 /* Frameworks */,
+				C80963C41D9629FD00C7A318 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = VisioninDemo;
+			productName = VisioninDemo;
+			productReference = C80963C61D9629FD00C7A318 /* VisioninDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C80963BE1D9629FD00C7A318 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0800;
+				ORGANIZATIONNAME = Visionin;
+				TargetAttributes = {
+					C80963C51D9629FD00C7A318 = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = 7C42L52533;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = C80963C11D9629FD00C7A318 /* Build configuration list for PBXProject "VisioninDemo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = C80963BD1D9629FD00C7A318;
+			productRefGroup = C80963C71D9629FD00C7A318 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C80963C51D9629FD00C7A318 /* VisioninDemo */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C80963C41D9629FD00C7A318 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C8BAC4B11E0135480086A92D /* rabbit.zip in Resources */,
+				C80963D91D9629FD00C7A318 /* LaunchScreen.storyboard in Resources */,
+				C80963D61D9629FD00C7A318 /* Assets.xcassets in Resources */,
+				C8BAC4B31E0135860086A92D /* visionin.res in Resources */,
+				C80963D41D9629FD00C7A318 /* Main.storyboard in Resources */,
+				C81908B31DFADC3A00637CB1 /* facer.model in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C80963C21D9629FD00C7A318 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C80963CE1D9629FD00C7A318 /* AppDelegate.m in Sources */,
+				C80963CB1D9629FD00C7A318 /* main.m in Sources */,
+				C8BAC4C01E0149FC0086A92D /* ViewController.m in Sources */,
+				C82569311DC74A6A00944023 /* VSVideoCamera.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		C80963D21D9629FD00C7A318 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C80963D31D9629FD00C7A318 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		C80963D71D9629FD00C7A318 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C80963D81D9629FD00C7A318 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		C80963DB1D9629FD00C7A318 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_BITCODE = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		C80963DC1D9629FD00C7A318 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_BITCODE = NO;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C80963DE1D9629FD00C7A318 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 7C42L52533;
+				INFOPLIST_FILE = VisioninDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/VisioninDemo/VisioninSDK",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.visionin.demo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		C80963DF1D9629FD00C7A318 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 7C42L52533;
+				INFOPLIST_FILE = VisioninDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/VisioninDemo/VisioninSDK",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.visionin.demo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C80963C11D9629FD00C7A318 /* Build configuration list for PBXProject "VisioninDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C80963DB1D9629FD00C7A318 /* Debug */,
+				C80963DC1D9629FD00C7A318 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C80963DD1D9629FD00C7A318 /* Build configuration list for PBXNativeTarget "VisioninDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C80963DE1D9629FD00C7A318 /* Debug */,
+				C80963DF1D9629FD00C7A318 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = C80963BE1D9629FD00C7A318 /* Project object */;
+}
