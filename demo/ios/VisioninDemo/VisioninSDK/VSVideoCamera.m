@@ -19,6 +19,7 @@
 @property(nonatomic, assign) CMSampleBufferRef sampleBuffer;
 @property (readonly, getter = isFrontFacingCameraPresent) BOOL frontFacingCameraPresent;
 @property (readonly, getter = isBackFacingCameraPresent) BOOL backFacingCameraPresent;
+@property (nonatomic, assign)BOOL isProcessing;
 
 
 @end
@@ -38,6 +39,7 @@ VSVideoCamera* shareInstance = nil;
 -(id)initWithSessionPreset:(NSString *)sessionPreset position:(AVCaptureDevicePosition)position view:(UIView*)view{
     BOOL asYuv = YES;
     _videoOrientation = -1;
+    _isProcessing = NO;
     self = [super initWithPosition:position pixelFormat:kCVPixelFormatType_420YpCbCr8BiPlanarFullRange view:view];
     if (self==nil) {
         return nil;
@@ -221,12 +223,12 @@ VSVideoCamera* shareInstance = nil;
 
 - (void)stopCameraCapture;
 {
+    [self stopVideoFrame];
     if ([_captureSession isRunning])
     {
         [self removeAudioInputsAndOutputs];
         [_captureSession stopRunning];
     }
-    [self stopVideoFrame];
 }
 
 - (void)pauseCameraCapture;
@@ -452,10 +454,16 @@ VSVideoCamera* shareInstance = nil;
             self.videoSampleBufferBlock(sampleBuffer);
         }
         
+        if (_isProcessing) {
+            return;
+        }
+        
         CFRetain(sampleBuffer);
         dispatch_async(sampleProcessingQueue, ^(){
+            _isProcessing = YES;
             [self processVideoSampleBuffer:sampleBuffer];
             CFRelease(sampleBuffer);
+            _isProcessing = NO;
         });
     }
 }

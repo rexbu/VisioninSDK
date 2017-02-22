@@ -2,8 +2,8 @@
 //  AppDelegate.h
 //  VisioninDemo
 //
-//  Created by Visionin on 16/9/24.
-//  Copyright © 2016年 Visionin. All rights reserved.
+//  Created by Visionin on 17/2/21.
+//  Copyright © 2017年 Rex. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>

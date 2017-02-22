@@ -17,7 +17,7 @@
 -(void)willOutputVideoSampleBuffer:(CMSampleBufferRef)sampleBuffer;
 @end
 
-@interface VSVideoCamera : VSVideoFrame<AVCaptureVideoDataOutputSampleBufferDelegate>
+@interface VSVideoCamera : VSVideoFrame<AVCaptureVideoDataOutputSampleBufferDelegate, AVCaptureAudioDataOutputSampleBufferDelegate>
 @property(nonatomic, copy)void (^videoSampleBufferBlock)(CMSampleBufferRef sampleBufer);
 @property(nonatomic, copy)void (^audioSampleBufferBlock)(CMSampleBufferRef sampleBufer);
 

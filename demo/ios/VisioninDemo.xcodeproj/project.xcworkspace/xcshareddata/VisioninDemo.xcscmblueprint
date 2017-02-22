@@ -1,0 +1,25 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "04acff05-9f20-4eb9-93f8-16e0d69dbc7d",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+    "04acff05-9f20-4eb9-93f8-16e0d69dbc7d" : {
+
+    }
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "04acff05-9f20-4eb9-93f8-16e0d69dbc7d" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "AD5646C4-CB2F-49CD-950E-965ADB966A3E",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "04acff05-9f20-4eb9-93f8-16e0d69dbc7d" : "vision\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "VisioninDemo",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "demo\/ios\/VisioninDemo\/VisioninDemo.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "svn:\/\/me-yun.com\/vision",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Subversion",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "04acff05-9f20-4eb9-93f8-16e0d69dbc7d"
+    }
+  ]
+}

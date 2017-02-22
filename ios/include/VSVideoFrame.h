@@ -26,21 +26,20 @@
 @property(nonatomic, assign)AVCaptureVideoOrientation   frontVideoOrientation;  // 前置摄像头输出视频流方向, 默认为AVCaptureVideoOrientationLandscapeLeft
 @property(nonatomic, assign)AVCaptureVideoOrientation   backVideoOrientation;   // 后置摄像头输出视频流方向, 默认为AVCaptureVideoOrientationLandscapeRight
 
-@property(nonatomic, assign) float smoothLevel;     // 磨皮，范围:0-1.0
-@property(nonatomic, assign) float brightenLevel;   // 美白，范围0-1.0
-@property(nonatomic, assign) float toningLevel;     // 粉嫩，范围0-1.0
-
-@property(nonatomic, copy)void (^bgraBytesBlock)(unsigned char* buffer,int width,int height);
-@property(nonatomic, copy)void (^nv21BytesBlock)(unsigned char* buffer,int width,int height);
-@property(nonatomic, copy)void (^nv12BytesBlock)(unsigned char* buffer,int width,int height);
-
+// 当使用processVideoSampleBuffer时获取处理后数据使用以下回调
 @property(nonatomic, copy)void (^bgraPixelBlock)(CVPixelBufferRef buffer, CMTime time);
 @property(nonatomic, copy)void (^yuv420pPixelBlock)(unsigned char* buffer, CMTime time);    // I420
 @property(nonatomic, copy)void (^nv21PixelBlock)(unsigned char* buffer, CMTime time);
 @property(nonatomic, copy)void (^nv12PixelBlock)(unsigned char* buffer, CMTime time);
-@property(nonatomic, copy)void (^vs3dPixelBlock)(unsigned char* buffer, CMTime time);
+// 当使用processVideoBytes时获取处理后数据使用以下回调
+@property(nonatomic, copy)void (^bgraBytesBlock)(unsigned char* buffer,int width,int height);
+@property(nonatomic, copy)void (^nv21BytesBlock)(unsigned char* buffer,int width,int height);
+@property(nonatomic, copy)void (^nv12BytesBlock)(unsigned char* buffer,int width,int height);
 
+// 当前帧的时间戳
 @property(nonatomic, assign)CMTime presentTimeStamp;
+// 磨皮，范围:0-1.0
+@property(nonatomic, assign) float smoothStrength;
 
 /*
  * position:
@@ -72,7 +71,7 @@
 -(void)removeBackground;
 
 +(VSVideoFrame*)shareInstance;
-
+-(void)dealloc;
 @end
 
 // 实时滤镜
