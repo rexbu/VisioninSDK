@@ -104,11 +104,6 @@ public class BytesActivity extends Activity implements Camera.PreviewCallback{
         videoFrame.setYuv420PCallback(new VSRawBytesCallback() {
             @Override
             public void outputBytes(byte[] bytes) {
-                // 获取人脸坐标点
-                float[] point = VSFacer.getFacerMarks(0);
-                if (point!=null){
-                    Log.e("Facer", "facer:"+point[0]+"/"+point[1]);
-                }
                 imageView.setImageBitmap(yuv420p2RGBABitmap(bytes, 360, 640));
             }
         });
@@ -121,23 +116,18 @@ public class BytesActivity extends Activity implements Camera.PreviewCallback{
     }
 
     @Override
-    protected void onResume() {
-        super.onResume();
-    }
-
-    @Override
     protected void onPause() {
-        if (videoFrame!=null){
-            videoFrame.stop();
-        }
-        com.rex.utils.CameraUtil.releaseCamera();
-        videoFrame.stop();
-        VSFacer.destroyFacer();
-        VSProps.destroyProps();
-        videoFrame.destroy();
-        videoFrame = null;
-
-        super.onPause();
+//        if (videoFrame!=null){
+//            videoFrame.stop();
+//        }
+//        com.rex.utils.CameraUtil.releaseCamera();
+//        videoFrame.stop();
+//        VSFacer.destroyFacer();
+//        VSProps.destroyProps();
+//        videoFrame.destroy();
+//        videoFrame = null;
+//
+//        super.onPause();
     }
 
     @Override
