@@ -32,6 +32,7 @@ public class GPU {
 
         NativeLoad.registJNIMethod(so, "com/visionin/gpu/GPU", "setPreviewMirror", "(Z)V");
         NativeLoad.registJNIMethod(so, "com/visionin/gpu/GPU", "setOutputMirror", "(Z)V");
+        NativeLoad.registJNIMethod(so, "com/visionin/gpu/GPU", "setOutputRotation", "(I)V");
 
         NativeLoad.registJNIMethod(so, "com/visionin/gpu/GPU", "setSmoothStrength", "(F)V");
         NativeLoad.registJNIMethod(so, "com/visionin/gpu/GPU", "setBrightenLevel", "(F)V");
@@ -66,6 +67,7 @@ public class GPU {
     /// 镜像
     public native void setPreviewMirror(boolean mirror);
     public native void setOutputMirror(boolean mirror);
+    protected native void setOutputRotation(int rotation);
 
     /// 美颜
     public native void setSmoothStrength(float level);

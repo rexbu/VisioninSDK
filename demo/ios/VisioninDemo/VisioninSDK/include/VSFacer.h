@@ -24,9 +24,11 @@
 -(void)stopFaceTracking;
 // 返回人脸68点关键点
 -(float*)getFacerMarks;
-
+// 开启与关闭整形
 -(void)startShaper;
 -(void)stopShaper;
+// 设置Marker
+-(void)setMarder:(BOOL)marder;
 /**
  * 整形强度，cmd为整形部位
  * stregnth: 0-1. 0-1为推荐区间，可大于1实现夸张效果

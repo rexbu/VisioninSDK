@@ -21,11 +21,11 @@ public class Visionin {
 
     static{
         long so = NativeLoad.loadSo("libvisionin.so");
-        NativeLoad.registJNIMethod(so, "com/visionin/Visionin", "authorization", "(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;)V");
+        NativeLoad.registJNIMethod(so, "com/visionin/Visionin", "authorization", "(Landroid/content/Context;Ljava/lang/String;)V");
         NativeLoad.registJNIMethod(so, "com/visionin/Visionin", "resource", "(Landroid/content/res/AssetManager;)V");
     }
 
-    public static void initialize(Context context, String appId, String appKey){
+    public static void initialize(Context context, String lisence){
         File file = new File("/data/data/"+ DeviceUtil.getPackageName(context) +"/__resource");
         if (!file.exists()){
             file.mkdir();
@@ -44,9 +44,9 @@ public class Visionin {
         }
 
         resource(context.getAssets());
-        authorization(context, appId, appKey);
+        authorization(context, lisence);
     }
 
-    public static native void authorization(Context context, String appId, String appKey);
+    public static native void authorization(Context context, String lisence);
     public static native void resource(AssetManager asset);
 }

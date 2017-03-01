@@ -18,9 +18,9 @@ VisioninSDK是一个跨平台的库，使用C++基于OpenGL ES 2.0实现，Visio
 
 #### 添加全局初始化方法，比如在AppDelegate中：
 
-`` [Visionin initialize:@"xxx" appKey:@"yyy"];`` 
+`` [Visionin initialize:@"xxx"];`` 
 
-- 其中xxx和yyy分别为应用的appId和appKey
+- 其中xxx为应用的证书
 
 #### 首先，新建VSVideoFrame对象
 
@@ -234,12 +234,12 @@ ___注意: 调用此接口不能停止人脸追踪和整形，要停止人脸追
 
 ####调用全局初始化方法：
 
-	Visionin.initialize(context, appId, appKey);
+	Visionin.initialize(context, lisence);
 	
 注意：
 
 * 第一个参数为Context类型，需要注意context的生命周期，如果context销毁可能引起VisioninSDK的错误，最好的方法是在Application中调用，或者使用getApplicationContext()
-* appId、appKey与IOS sdk的appId和appKey使用同一个即可，注意在__开发者中心中设置android的包名__
+* lisence与IOS sdk的lisence使用同一个即可，注意在__开发者中心中设置android的包名__
 
 #### 创建VSVideoFrame
 
