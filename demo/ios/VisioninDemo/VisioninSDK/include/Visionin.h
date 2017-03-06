@@ -5,10 +5,17 @@
 //  Created by Rex on 16/2/25.
 //  Copyright © 2016年 Rex. All rights reserved.
 //
+
 #import <Foundation/Foundation.h>
 #import "VSVideoFrame.h"
 #import "VSFacer.h"
 #import "VSProps.h"
+
+//! Project version number for Visionin.
+FOUNDATION_EXPORT double VisioninVersionNumber;
+
+//! Project version string for Visionin.
+FOUNDATION_EXPORT const unsigned char VisioninVersionString[];
 
 @interface Visionin : NSObject
 +(void)initialize:(NSString*)license;

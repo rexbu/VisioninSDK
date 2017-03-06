@@ -16,7 +16,10 @@
 @property(nonatomic, weak)NSString* currentProps;
 @property(nonatomic, readonly)BOOL  propsStatus;
 
+// 加载本地道具，不需要带zip后缀
 -(BOOL)startProps:(NSString*)propsName;
+// 道具本地全路径，需要带zip后缀
+-(BOOL)startLocalProps:(NSString*)propsPath;
 
 //// 获取所有的道具列表
 //-(void)propses:(void (^)(NSArray* ))propesBlock;

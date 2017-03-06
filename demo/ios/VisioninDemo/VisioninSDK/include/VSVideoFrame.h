@@ -31,6 +31,7 @@
 @property(nonatomic, copy)void (^yuv420pPixelBlock)(unsigned char* buffer, CMTime time);    // I420
 @property(nonatomic, copy)void (^nv21PixelBlock)(unsigned char* buffer, CMTime time);
 @property(nonatomic, copy)void (^nv12PixelBlock)(unsigned char* buffer, CMTime time);
+@property(nonatomic, copy)void (^textureBlock)(unsigned int texture, CMTime time);   // 返回处理后的texture
 // 当使用processVideoBytes时获取处理后数据使用以下回调
 @property(nonatomic, copy)void (^bgraBytesBlock)(unsigned char* buffer,int width,int height);
 @property(nonatomic, copy)void (^nv21BytesBlock)(unsigned char* buffer,int width,int height);

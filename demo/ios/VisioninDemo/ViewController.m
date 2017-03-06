@@ -66,7 +66,8 @@ BOOL canRotateToAllOrientations;
     [facer startShaper];
     
     // 加载贴纸
-    [[VSProps shareInstance] startProps:@"rabbit"];
+    NSString* props = [[NSBundle mainBundle] pathForResource:@"rabbit" ofType:@"zip"];
+    [[VSProps shareInstance] startLocalProps:props];
     
     //    __block typeof(self) parent = self;
     //    [videoCamera setBgraPixelBlock:^(CVPixelBufferRef pixelBuffer, CMTime time) {

@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C8072BCC1E6D52FB00847EA8 /* MoCross.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8072BCA1E6D52FB00847EA8 /* MoCross.framework */; };
+		C8072BCD1E6D52FB00847EA8 /* Visionin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8072BCB1E6D52FB00847EA8 /* Visionin.framework */; };
+		C8072BCE1E6D530E00847EA8 /* MoCross.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8072BCA1E6D52FB00847EA8 /* MoCross.framework */; };
+		C8072BCF1E6D530E00847EA8 /* MoCross.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C8072BCA1E6D52FB00847EA8 /* MoCross.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		C8072BD01E6D530E00847EA8 /* Visionin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8072BCB1E6D52FB00847EA8 /* Visionin.framework */; };
+		C8072BD11E6D530E00847EA8 /* Visionin.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C8072BCB1E6D52FB00847EA8 /* Visionin.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C8ED52D31E5C30BA00796B4E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C8ED52D21E5C30BA00796B4E /* main.m */; };
 		C8ED52D61E5C30BA00796B4E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C8ED52D51E5C30BA00796B4E /* AppDelegate.m */; };
 		C8ED52D91E5C30BA00796B4E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C8ED52D81E5C30BA00796B4E /* ViewController.m */; };
@@ -26,20 +32,30 @@
 		C8ED53261E5C322500796B4E /* libz.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C8ED53251E5C322500796B4E /* libz.1.dylib */; };
 		C8ED53281E5C323300796B4E /* libc++.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C8ED53271E5C323300796B4E /* libc++.1.dylib */; };
 		C8ED532A1E5C324700796B4E /* libstdc++.6.0.9.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C8ED53291E5C324700796B4E /* libstdc++.6.0.9.dylib */; };
-		C8ED53301E5C325D00796B4E /* libcrypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C8ED532C1E5C325D00796B4E /* libcrypto.a */; };
-		C8ED53311E5C325D00796B4E /* libcurl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C8ED532D1E5C325D00796B4E /* libcurl.a */; };
-		C8ED53321E5C325D00796B4E /* libssl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C8ED532E1E5C325D00796B4E /* libssl.a */; };
 		C8ED533A1E5C328E00796B4E /* VSVideoCamera.m in Sources */ = {isa = PBXBuildFile; fileRef = C8ED53391E5C328E00796B4E /* VSVideoCamera.m */; };
 		C8ED533C1E5C329E00796B4E /* rabbit.zip in Resources */ = {isa = PBXBuildFile; fileRef = C8ED533B1E5C329E00796B4E /* rabbit.zip */; };
 		C8ED533F1E5C32B000796B4E /* facer.model in Resources */ = {isa = PBXBuildFile; fileRef = C8ED533D1E5C32B000796B4E /* facer.model */; };
 		C8ED53401E5C32B000796B4E /* visionin.res in Resources */ = {isa = PBXBuildFile; fileRef = C8ED533E1E5C32B000796B4E /* visionin.res */; };
-		C8ED534C1E5C542B00796B4E /* libVisionin.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C8ED534B1E5C542B00796B4E /* libVisionin.a */; };
-		C8ED53531E5C55AD00796B4E /* libcjson.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C8ED53501E5C55AD00796B4E /* libcjson.a */; };
-		C8ED53541E5C55AD00796B4E /* libMobileCross.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C8ED53511E5C55AD00796B4E /* libMobileCross.a */; };
-		C8ED53551E5C55AD00796B4E /* libsszip.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C8ED53521E5C55AD00796B4E /* libsszip.a */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		C8072BD21E6D530E00847EA8 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				C8072BCF1E6D530E00847EA8 /* MoCross.framework in Embed Frameworks */,
+				C8072BD11E6D530E00847EA8 /* Visionin.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		C8072BCA1E6D52FB00847EA8 /* MoCross.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MoCross.framework; path = VisioninDemo/VisioninSDK/MoCross.framework; sourceTree = "<group>"; };
+		C8072BCB1E6D52FB00847EA8 /* Visionin.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Visionin.framework; path = VisioninDemo/VisioninSDK/Visionin.framework; sourceTree = "<group>"; };
 		C8ED52CE1E5C30BA00796B4E /* VisioninDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VisioninDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8ED52D21E5C30BA00796B4E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		C8ED52D41E5C30BA00796B4E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -63,9 +79,6 @@
 		C8ED53251E5C322500796B4E /* libz.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.dylib; path = ../../../../../../../usr/lib/libz.1.dylib; sourceTree = "<group>"; };
 		C8ED53271E5C323300796B4E /* libc++.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.1.dylib"; path = "../../../../../../../usr/lib/libc++.1.dylib"; sourceTree = "<group>"; };
 		C8ED53291E5C324700796B4E /* libstdc++.6.0.9.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.6.0.9.dylib"; path = "../../../../../../../usr/lib/libstdc++.6.0.9.dylib"; sourceTree = "<group>"; };
-		C8ED532C1E5C325D00796B4E /* libcrypto.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcrypto.a; path = VisioninDemo/VisioninSDK/libcrypto.a; sourceTree = "<group>"; };
-		C8ED532D1E5C325D00796B4E /* libcurl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcurl.a; path = VisioninDemo/VisioninSDK/libcurl.a; sourceTree = "<group>"; };
-		C8ED532E1E5C325D00796B4E /* libssl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libssl.a; path = VisioninDemo/VisioninSDK/libssl.a; sourceTree = "<group>"; };
 		C8ED53341E5C327E00796B4E /* VSFacer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSFacer.h; path = VisioninSDK/include/VSFacer.h; sourceTree = "<group>"; };
 		C8ED53351E5C327E00796B4E /* VSProps.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSProps.h; path = VisioninSDK/include/VSProps.h; sourceTree = "<group>"; };
 		C8ED53361E5C327E00796B4E /* Visionin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Visionin.h; path = VisioninSDK/include/Visionin.h; sourceTree = "<group>"; };
@@ -75,10 +88,6 @@
 		C8ED533B1E5C329E00796B4E /* rabbit.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = rabbit.zip; sourceTree = "<group>"; };
 		C8ED533D1E5C32B000796B4E /* facer.model */ = {isa = PBXFileReference; lastKnownFileType = file; name = facer.model; path = VisioninSDK/facer.model; sourceTree = "<group>"; };
 		C8ED533E1E5C32B000796B4E /* visionin.res */ = {isa = PBXFileReference; lastKnownFileType = file; name = visionin.res; path = VisioninSDK/visionin.res; sourceTree = "<group>"; };
-		C8ED534B1E5C542B00796B4E /* libVisionin.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libVisionin.a; path = VisioninDemo/VisioninSDK/libVisionin.a; sourceTree = "<group>"; };
-		C8ED53501E5C55AD00796B4E /* libcjson.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcjson.a; path = VisioninDemo/VisioninSDK/libcjson.a; sourceTree = "<group>"; };
-		C8ED53511E5C55AD00796B4E /* libMobileCross.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libMobileCross.a; path = VisioninDemo/VisioninSDK/libMobileCross.a; sourceTree = "<group>"; };
-		C8ED53521E5C55AD00796B4E /* libsszip.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libsszip.a; path = VisioninDemo/VisioninSDK/libsszip.a; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,24 +95,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C8ED53301E5C325D00796B4E /* libcrypto.a in Frameworks */,
-				C8ED53551E5C55AD00796B4E /* libsszip.a in Frameworks */,
-				C8ED53311E5C325D00796B4E /* libcurl.a in Frameworks */,
-				C8ED53321E5C325D00796B4E /* libssl.a in Frameworks */,
+				C8072BCD1E6D52FB00847EA8 /* Visionin.framework in Frameworks */,
 				C8ED532A1E5C324700796B4E /* libstdc++.6.0.9.dylib in Frameworks */,
-				C8ED53541E5C55AD00796B4E /* libMobileCross.a in Frameworks */,
 				C8ED53281E5C323300796B4E /* libc++.1.dylib in Frameworks */,
+				C8072BCE1E6D530E00847EA8 /* MoCross.framework in Frameworks */,
 				C8ED53261E5C322500796B4E /* libz.1.dylib in Frameworks */,
 				C8ED53241E5C320600796B4E /* CoreVideo.framework in Frameworks */,
-				C8ED53531E5C55AD00796B4E /* libcjson.a in Frameworks */,
 				C8ED53221E5C31FF00796B4E /* OpenGLES.framework in Frameworks */,
-				C8ED534C1E5C542B00796B4E /* libVisionin.a in Frameworks */,
 				C8ED53201E5C31F800796B4E /* QuartzCore.framework in Frameworks */,
 				C8ED531E1E5C31F200796B4E /* UIKit.framework in Frameworks */,
 				C8ED531C1E5C31EB00796B4E /* AVFoundation.framework in Frameworks */,
 				C8ED531A1E5C31E400796B4E /* Foundation.framework in Frameworks */,
 				C8ED53181E5C31DE00796B4E /* CoreGraphics.framework in Frameworks */,
 				C8ED53161E5C31D800796B4E /* CoreMedia.framework in Frameworks */,
+				C8072BD01E6D530E00847EA8 /* Visionin.framework in Frameworks */,
+				C8072BCC1E6D52FB00847EA8 /* MoCross.framework in Frameworks */,
 				C8ED53141E5C31D000796B4E /* CoreImage.framework in Frameworks */,
 				C8ED53121E5C31B700796B4E /* MediaPlayer.framework in Frameworks */,
 			);
@@ -161,13 +167,8 @@
 		C8ED53101E5C31B700796B4E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				C8ED53501E5C55AD00796B4E /* libcjson.a */,
-				C8ED53511E5C55AD00796B4E /* libMobileCross.a */,
-				C8ED53521E5C55AD00796B4E /* libsszip.a */,
-				C8ED534B1E5C542B00796B4E /* libVisionin.a */,
-				C8ED532C1E5C325D00796B4E /* libcrypto.a */,
-				C8ED532D1E5C325D00796B4E /* libcurl.a */,
-				C8ED532E1E5C325D00796B4E /* libssl.a */,
+				C8072BCA1E6D52FB00847EA8 /* MoCross.framework */,
+				C8072BCB1E6D52FB00847EA8 /* Visionin.framework */,
 				C8ED53291E5C324700796B4E /* libstdc++.6.0.9.dylib */,
 				C8ED53271E5C323300796B4E /* libc++.1.dylib */,
 				C8ED53251E5C322500796B4E /* libz.1.dylib */,
@@ -207,6 +208,7 @@
 				C8ED52CA1E5C30BA00796B4E /* Sources */,
 				C8ED52CB1E5C30BA00796B4E /* Frameworks */,
 				C8ED52CC1E5C30BA00796B4E /* Resources */,
+				C8072BD21E6D530E00847EA8 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -399,6 +401,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 7C42L52533;
 				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/VisioninDemo/VisioninSDK",
+				);
 				INFOPLIST_FILE = VisioninDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
@@ -416,6 +422,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 7C42L52533;
 				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/VisioninDemo/VisioninSDK",
+				);
 				INFOPLIST_FILE = VisioninDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (

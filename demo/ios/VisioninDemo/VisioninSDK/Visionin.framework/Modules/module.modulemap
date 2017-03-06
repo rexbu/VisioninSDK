@@ -1,0 +1,6 @@
+framework module Visionin {
+  umbrella header "Visionin.h"
+
+  export *
+  module * { export * }
+}

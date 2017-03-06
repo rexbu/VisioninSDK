@@ -39,3 +39,6 @@
 
 #define SHAPER_CMD_EYE  1
 #define SHAPER_CMD_FACE 2
+#define SHAPER_CMD_CHIN 3
+#define SHAPER_CMD_NOSE 4
+#define SAHPER_CMD_CHEEK    5
