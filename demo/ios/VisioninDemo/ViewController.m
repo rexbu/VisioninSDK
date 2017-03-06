@@ -219,6 +219,7 @@ BOOL canRotateToAllOrientations;
     float strength = [(UISlider*)sender value];
     [[VSFacer shareInstance] setShapping:SHAPER_CMD_EYE strength:strength];
     [[VSFacer shareInstance] setShapping:SHAPER_CMD_FACE strength:strength];
+    [[VSFacer shareInstance] setShapping:SHAPER_CMD_CHIN strength:strength];
 }
 -(void)setNoneSmooth{
     [videoCamera setSmoothStrength:0];
