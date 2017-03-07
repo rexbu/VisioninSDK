@@ -28,8 +28,8 @@ public class VSFacer {
         NativeLoad.registJNIMethod(so, "com/visionin/core/VSFacer", "isFacerTracking", "()Z");
         NativeLoad.registJNIMethod(so, "com/visionin/core/VSFacer", "getFacerMarks", "(I)[F");
 
-        NativeLoad.registJNIMethod(so, "com/visionin/core/VSFacer", "startFacerShaper", "()V");
-        NativeLoad.registJNIMethod(so, "com/visionin/core/VSFacer", "stopFacerShaper", "()V");
+        NativeLoad.registJNIMethod(so, "com/visionin/core/VSFacer", "startShaper", "()V");
+        NativeLoad.registJNIMethod(so, "com/visionin/core/VSFacer", "stopShaper", "()V");
 //        NativeLoad.registJNIMethod(so, "com/visionin/core/VSFacer", "setShaping", "(IF)V");
 //
 //        NativeLoad.registJNIMethod(so, "com/visionin/core/VSFacer", "setMarker", "(Z)V");
@@ -95,12 +95,24 @@ public class VSFacer {
     /**
      * 开始整形
      */
-    public static native void startFacerShaper();
+    public static native void startShaper();
 
     /**
      * 结束整形
      */
-    public static native void stopFacerShaper();
+    public static native void stopShaper();
+    /**
+     * 设置整形参数
+     */
+    public static native void setShapping(int cmd, float strength);
+
+    // 整形部位，分别为眼睛、腮、下巴、鼻子、下颌
+    public static final int SHAPER_CMD_EYE = 1;
+    public static final int SHAPER_CMD_FACE = 2;
+    public static final int SHAPER_CMD_CHIN = 3;
+    // 暂时未生效，将来生效
+    public static final int SHAPER_CMD_NOSE = 4;
+    public static final int SAHPER_CMD_CHEEK = 5;
 //    public native void setShaping(int cmd, float strength);
 //
 //    public native void setMarker(boolean flag);

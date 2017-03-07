@@ -13,6 +13,7 @@
 		C8072BCF1E6D530E00847EA8 /* MoCross.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C8072BCA1E6D52FB00847EA8 /* MoCross.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C8072BD01E6D530E00847EA8 /* Visionin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8072BCB1E6D52FB00847EA8 /* Visionin.framework */; };
 		C8072BD11E6D530E00847EA8 /* Visionin.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C8072BCB1E6D52FB00847EA8 /* Visionin.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		C84B840E1E6EC7A000FAE377 /* cat.zip in Resources */ = {isa = PBXBuildFile; fileRef = C84B840D1E6EC7A000FAE377 /* cat.zip */; };
 		C8ED52D31E5C30BA00796B4E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C8ED52D21E5C30BA00796B4E /* main.m */; };
 		C8ED52D61E5C30BA00796B4E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C8ED52D51E5C30BA00796B4E /* AppDelegate.m */; };
 		C8ED52D91E5C30BA00796B4E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C8ED52D81E5C30BA00796B4E /* ViewController.m */; };
@@ -33,7 +34,6 @@
 		C8ED53281E5C323300796B4E /* libc++.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C8ED53271E5C323300796B4E /* libc++.1.dylib */; };
 		C8ED532A1E5C324700796B4E /* libstdc++.6.0.9.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C8ED53291E5C324700796B4E /* libstdc++.6.0.9.dylib */; };
 		C8ED533A1E5C328E00796B4E /* VSVideoCamera.m in Sources */ = {isa = PBXBuildFile; fileRef = C8ED53391E5C328E00796B4E /* VSVideoCamera.m */; };
-		C8ED533C1E5C329E00796B4E /* rabbit.zip in Resources */ = {isa = PBXBuildFile; fileRef = C8ED533B1E5C329E00796B4E /* rabbit.zip */; };
 		C8ED533F1E5C32B000796B4E /* facer.model in Resources */ = {isa = PBXBuildFile; fileRef = C8ED533D1E5C32B000796B4E /* facer.model */; };
 		C8ED53401E5C32B000796B4E /* visionin.res in Resources */ = {isa = PBXBuildFile; fileRef = C8ED533E1E5C32B000796B4E /* visionin.res */; };
 /* End PBXBuildFile section */
@@ -56,6 +56,7 @@
 /* Begin PBXFileReference section */
 		C8072BCA1E6D52FB00847EA8 /* MoCross.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MoCross.framework; path = VisioninDemo/VisioninSDK/MoCross.framework; sourceTree = "<group>"; };
 		C8072BCB1E6D52FB00847EA8 /* Visionin.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Visionin.framework; path = VisioninDemo/VisioninSDK/Visionin.framework; sourceTree = "<group>"; };
+		C84B840D1E6EC7A000FAE377 /* cat.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = cat.zip; sourceTree = "<group>"; };
 		C8ED52CE1E5C30BA00796B4E /* VisioninDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VisioninDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8ED52D21E5C30BA00796B4E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		C8ED52D41E5C30BA00796B4E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -85,7 +86,6 @@
 		C8ED53371E5C327E00796B4E /* VSVideoFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSVideoFrame.h; path = VisioninSDK/include/VSVideoFrame.h; sourceTree = "<group>"; };
 		C8ED53381E5C327E00796B4E /* VSVideoCamera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSVideoCamera.h; path = VisioninSDK/include/VSVideoCamera.h; sourceTree = "<group>"; };
 		C8ED53391E5C328E00796B4E /* VSVideoCamera.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSVideoCamera.m; path = VisioninSDK/VSVideoCamera.m; sourceTree = "<group>"; };
-		C8ED533B1E5C329E00796B4E /* rabbit.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = rabbit.zip; sourceTree = "<group>"; };
 		C8ED533D1E5C32B000796B4E /* facer.model */ = {isa = PBXFileReference; lastKnownFileType = file; name = facer.model; path = VisioninSDK/facer.model; sourceTree = "<group>"; };
 		C8ED533E1E5C32B000796B4E /* visionin.res */ = {isa = PBXFileReference; lastKnownFileType = file; name = visionin.res; path = VisioninSDK/visionin.res; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -138,9 +138,9 @@
 		C8ED52D01E5C30BA00796B4E /* VisioninDemo */ = {
 			isa = PBXGroup;
 			children = (
+				C84B840D1E6EC7A000FAE377 /* cat.zip */,
 				C8ED533D1E5C32B000796B4E /* facer.model */,
 				C8ED533E1E5C32B000796B4E /* visionin.res */,
-				C8ED533B1E5C329E00796B4E /* rabbit.zip */,
 				C8ED52D41E5C30BA00796B4E /* AppDelegate.h */,
 				C8ED52D71E5C30BA00796B4E /* ViewController.h */,
 				C8ED52D51E5C30BA00796B4E /* AppDelegate.m */,
@@ -258,12 +258,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C84B840E1E6EC7A000FAE377 /* cat.zip in Resources */,
 				C8ED52E11E5C30BA00796B4E /* LaunchScreen.storyboard in Resources */,
 				C8ED533F1E5C32B000796B4E /* facer.model in Resources */,
 				C8ED52DE1E5C30BA00796B4E /* Assets.xcassets in Resources */,
 				C8ED53401E5C32B000796B4E /* visionin.res in Resources */,
 				C8ED52DC1E5C30BA00796B4E /* Main.storyboard in Resources */,
-				C8ED533C1E5C329E00796B4E /* rabbit.zip in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

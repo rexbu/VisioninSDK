@@ -110,8 +110,8 @@ public class BytesActivity extends Activity implements Camera.PreviewCallback{
 
         VSFacer.initialize(this);
         VSFacer.startFacerTracking();
-        VSFacer.startFacerShaper();
-        VSProps.startStProps("/data/data/"+ DeviceUtil.getPackageName(this) +"/rabbit.zip", false);
+        VSFacer.startShaper();
+        VSProps.startProps("/data/data/"+ DeviceUtil.getPackageName(this) +"/rabbit.zip", false);
         videoFrame.start();
     }
 
@@ -175,11 +175,11 @@ public class BytesActivity extends Activity implements Camera.PreviewCallback{
             @Override
             public void onClick(View view) {
                 if (isShaper){
-                    VSFacer.stopFacerShaper();
+                    VSFacer.stopShaper();
                     isShaper = false;
                 }
                 else{
-                    VSFacer.startFacerShaper();
+                    VSFacer.startShaper();
                     isShaper = true;
                 }
             }
@@ -188,11 +188,11 @@ public class BytesActivity extends Activity implements Camera.PreviewCallback{
             @Override
             public void onClick(View view) {
                 if (isProps){
-                    VSProps.stopStProps();
+                    VSProps.stopProps();
                     isProps = false;
                 }
                 else{
-                    VSProps.startStProps("/data/data/"+ DeviceUtil.getPackageName(BytesActivity.this) +"/rabbit.zip", false);
+                    VSProps.startProps("/data/data/"+ DeviceUtil.getPackageName(BytesActivity.this) +"/rabbit.zip", false);
                     isProps = true;
                 }
             }

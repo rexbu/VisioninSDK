@@ -52,8 +52,8 @@ public class TextureActivity extends Activity implements SurfaceHolder.Callback{
         setContentView(R.layout.activity_texture);
 
         try {
-            InputStream is = this.getResources().getAssets().open("rabbit.zip");
-            OutputStream os = FileUtil.fileOutputStream("/data/data/"+ DeviceUtil.getPackageName(this) +"/rabbit.zip");
+            InputStream is = this.getResources().getAssets().open("cat.zip");
+            OutputStream os = FileUtil.fileOutputStream("/data/data/"+ DeviceUtil.getPackageName(this) +"/cat.zip");
             FileUtil.write(os, is);
         } catch (IOException e) {
             e.printStackTrace();
@@ -118,7 +118,7 @@ public class TextureActivity extends Activity implements SurfaceHolder.Callback{
                 // 获取人脸坐标点，偶数为x坐标，奇数为y坐标
                 float[] point = VSFacer.getFacerMarks(0);
                 if (point!=null){
-                    Log.e("Facer", "face第一个点  x:"+point[0]+" y:"+point[1]);
+                    //Log.e("Facer", "face第一个点  x:"+point[0]+" y:"+point[1]);
                 }
                 //imageView.setImageBitmap(yuv420p2RGBABitmap(bytes, 360, 640));
             }
@@ -126,8 +126,8 @@ public class TextureActivity extends Activity implements SurfaceHolder.Callback{
 
         VSFacer.initialize(this);
         VSFacer.startFacerTracking();
-        VSFacer.startFacerShaper();
-        VSProps.startStProps("/data/data/"+ DeviceUtil.getPackageName(this) +"/rabbit.zip", false);
+        VSFacer.startShaper();
+        VSProps.startProps("/data/data/" + DeviceUtil.getPackageName(this) + "/cat.zip", false);
         videoFrame.start();
         try {
             com.rex.utils.CameraUtil.mCamera.setPreviewTexture(videoFrame.surfaceTexture());
@@ -193,11 +193,11 @@ public class TextureActivity extends Activity implements SurfaceHolder.Callback{
             @Override
             public void onClick(View view) {
                 if (isShaper){
-                    VSFacer.stopFacerShaper();
+                    VSFacer.stopShaper();
                     isShaper = false;
                 }
                 else{
-                    VSFacer.startFacerShaper();
+                    VSFacer.startShaper();
                     isShaper = true;
                 }
             }
@@ -206,11 +206,11 @@ public class TextureActivity extends Activity implements SurfaceHolder.Callback{
             @Override
             public void onClick(View view) {
                 if (isProps){
-                    VSProps.stopStProps();
+                    VSProps.stopProps();
                     isProps = false;
                 }
                 else{
-                    VSProps.startStProps("/data/data/"+ DeviceUtil.getPackageName(TextureActivity.this) +"/rabbit.zip", false);
+                    VSProps.startProps("/data/data/" + DeviceUtil.getPackageName(TextureActivity.this) + "/cat.zip", false);
                     isProps = true;
                 }
             }

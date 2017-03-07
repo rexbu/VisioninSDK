@@ -135,7 +135,7 @@ public class VSVideoFrame extends GPU implements SurfaceTexture.OnFrameAvailable
         isProcessing=true;
         this.makeCurrent();
         surfaceTexture.updateTexImage();
-        super.processTexture(textureId);
+        super.processTexture(textureId, GPU_TEXTURE_OES);
         if (rawBytesCallback!=null) {
             getBytes(outputBytes);
             rawBytesCallback.outputBytes(outputBytes);

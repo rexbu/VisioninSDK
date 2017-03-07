@@ -66,7 +66,7 @@ BOOL canRotateToAllOrientations;
     [facer startShaper];
     
     // 加载贴纸
-    NSString* props = [[NSBundle mainBundle] pathForResource:@"rabbit" ofType:@"zip"];
+    NSString* props = [[NSBundle mainBundle] pathForResource:@"cat" ofType:@"zip"];
     [[VSProps shareInstance] startLocalProps:props];
     
     //    __block typeof(self) parent = self;
@@ -244,7 +244,7 @@ BOOL canRotateToAllOrientations;
         [[VSProps shareInstance] stopProps];
     }
     else{
-        [[VSProps shareInstance] startProps:@"rabbit"];
+        [[VSProps shareInstance] startProps:@"cat"];
     }
 }
 

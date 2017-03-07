@@ -19,7 +19,7 @@ public class GPU {
         NativeLoad.registJNIMethod(so, "com/visionin/gpu/GPU", "makeCurrent", "(J)V");
         NativeLoad.registJNIMethod(so, "com/visionin/gpu/GPU", "destroyEGL", "(J)V");
 
-        NativeLoad.registJNIMethod(so, "com/visionin/gpu/GPU", "processTexture", "(I)V");
+        NativeLoad.registJNIMethod(so, "com/visionin/gpu/GPU", "processTexture", "(II)V");
         NativeLoad.registJNIMethod(so, "com/visionin/gpu/GPU", "processBytes", "([BIII)V");
         NativeLoad.registJNIMethod(so, "com/visionin/gpu/GPU", "getBytes", "([B)V");
         NativeLoad.registJNIMethod(so, "com/visionin/gpu/GPU", "getTexture", "()I");
@@ -54,7 +54,7 @@ public class GPU {
     protected native void makeCurrent(long context);
     protected native void destroyEGL(long context);
     /// c处理
-    protected native void processTexture(int texture);
+    protected native void processTexture(int texture, int texture_type);
     protected native void processBytes(byte[] bytes, int width, int height, int format);
     public native void getBytes(byte[] bytes);
     public native int getTexture();
@@ -105,4 +105,8 @@ public class GPU {
             makeCurrent(mEGLContext);
         }
     }
+
+    // processTexture函数要处理的texture类型，如果是surfaceTexture，则应该为OES类型
+    public static final int GPU_TEXTURE_RGB = 0;
+    public static final int GPU_TEXTURE_OES = 1;
 }
