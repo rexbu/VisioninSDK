@@ -10,7 +10,6 @@
 #define	__Http_H_
 
 #include "bs.h"
-#include "curl.h"
 #include <string>
 #include <vector>
 
@@ -52,7 +51,7 @@ class IOSEnv;
 /// http
 class HttpSession{
 public:
-    HttpSession();
+    HttpSession(void* threadpool=NULL);
     ~HttpSession();
     virtual void get(const char* url, HttpCallback* callback = NULL);
     virtual void post(const char* url, const char* body, uint32_t length = 0,HttpCallback* callback = NULL);
@@ -65,9 +64,10 @@ public:
     static pthread_mutex_t* m_thread_locks; // 多线程ssl锁
     const static uint32_t   HTTP_TIMEOUT = 10;      // 过期时间
 protected:
-    void setOpt(CURL* curl, http_method_t method, const char* body, uint32_t length);
+    void setOpt(void* curl, http_method_t method, const char* body, uint32_t length);
     vector<pair<string, string> >    m_headers;
     
+    void*       m_thread_pool;
 #ifdef __IOS__
     IOSEnv*     m_iosenv;
 #endif
