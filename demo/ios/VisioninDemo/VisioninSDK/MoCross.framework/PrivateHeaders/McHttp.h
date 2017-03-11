@@ -58,6 +58,7 @@ public:
     virtual void put(const char* url, const char* body, uint32_t length = 0,HttpCallback* callback = NULL);
     virtual void del(const char* url, HttpCallback* callback = NULL);
     virtual void http(const char* url, http_method_t method, const char* body = NULL, uint32_t length = 0, HttpCallback* callback = NULL);
+    virtual void httpSync(const char* url, http_method_t method, const char* body = NULL, uint32_t length = 0, HttpCallback* callback = NULL);
     virtual void download(const char* url, DownCallback* callback);
     void addHttpHeader(const char* key, const char* value);
     
