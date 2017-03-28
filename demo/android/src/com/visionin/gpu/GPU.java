@@ -15,7 +15,8 @@ public class GPU {
         NativeLoad.registJNIMethod(so, "com/visionin/gpu/GPU", "createTexture", "()I");
         NativeLoad.registJNIMethod(so, "com/visionin/gpu/GPU", "destroyTexture", "(I)V");
 
-        NativeLoad.registJNIMethod(so, "com/visionin/gpu/GPU", "eglContext", "(Landroid/view/Surface;)J");
+        NativeLoad.registJNIMethod(so, "com/visionin/gpu/GPU", "eglContext", "(Z)J");
+        NativeLoad.registJNIMethod(so, "com/visionin/gpu/GPU", "setRenderSurface", "(Landroid/view/Surface;)V");
         NativeLoad.registJNIMethod(so, "com/visionin/gpu/GPU", "makeCurrent", "(J)V");
         NativeLoad.registJNIMethod(so, "com/visionin/gpu/GPU", "destroyEGL", "(J)V");
 
@@ -50,9 +51,11 @@ public class GPU {
     protected static native int createTexture();
     protected static native void destroyTexture(int texture);
     /// EGLContext
-    protected native long eglContext(Surface surface);
+    protected native long eglContext(boolean active);
+    protected native void setRenderSurface(Surface surface);
     protected native void makeCurrent(long context);
     protected native void destroyEGL(long context);
+
     /// c处理
     protected native void processTexture(int texture, int texture_type);
     protected native void processBytes(byte[] bytes, int width, int height, int format);
@@ -87,17 +90,13 @@ public class GPU {
     protected int   mProcessMode = 0;
     protected static boolean init = false;
 
-    protected GPU(Surface surface) throws Exception {
-        mEGLContext = eglContext(surface);
-        if (mEGLContext==0){
-            throw new Exception("GLContext create Error!");
-        }
+    protected GPU(boolean glcontext){
+        mEGLContext = eglContext(glcontext);
     }
-    protected GPU(Surface surface, int mode){
-        mProcessMode = mode;
-        mEGLContext = eglContext(surface);
-        if (mEGLContext==0){
-        }
+
+    protected GPU(Surface surface) throws Exception {
+        mEGLContext = eglContext(true);
+        setRenderSurface(surface);
     }
 
     public void makeCurrent(){

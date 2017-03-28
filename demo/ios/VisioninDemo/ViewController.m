@@ -67,7 +67,7 @@ BOOL canRotateToAllOrientations;
     
     // 加载贴纸
     NSString* props = [[NSBundle mainBundle] pathForResource:@"cat" ofType:@"zip"];
-    [[VSProps shareInstance] startLocalProps:props];
+    //[[VSProps shareInstance] startLocalProps:props];
     
     //    __block typeof(self) parent = self;
     //    [videoCamera setBgraPixelBlock:^(CVPixelBufferRef pixelBuffer, CMTime time) {
@@ -219,7 +219,7 @@ BOOL canRotateToAllOrientations;
     float strength = [(UISlider*)sender value];
     [[VSFacer shareInstance] setShapping:SHAPER_CMD_EYE strength:strength];
     [[VSFacer shareInstance] setShapping:SHAPER_CMD_FACE strength:strength];
-    [[VSFacer shareInstance] setShapping:SHAPER_CMD_CHIN strength:strength];
+    // [[VSFacer shareInstance] setShapping:SHAPER_CMD_CHIN strength:strength];
 }
 -(void)setNoneSmooth{
     [videoCamera setSmoothStrength:0];
@@ -260,7 +260,6 @@ BOOL canRotateToAllOrientations;
 - (void) viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-    
     //	We're now on the screen, disable auto rotations
     canRotateToAllOrientations = YES;
 }
@@ -291,7 +290,7 @@ BOOL canRotateToAllOrientations;
         return;
     }
     
-    [videoCamera setPreview:self.view];
+    [videoCamera setViewFrame:self.view.bounds];
     
     old_orientation = orientation;
     

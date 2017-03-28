@@ -3,7 +3,9 @@ package com.visionin.demo;
 import android.app.Activity;
 import android.content.res.Configuration;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.hardware.Camera;
+import android.media.Image;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.SurfaceHolder;
@@ -126,8 +128,12 @@ public class TextureActivity extends Activity implements SurfaceHolder.Callback{
 
         VSFacer.initialize(this);
         VSFacer.startFacerTracking();
+
         VSFacer.startShaper();
-        VSProps.startProps("/data/data/" + DeviceUtil.getPackageName(this) + "/cat.zip", false);
+        boolean st = VSProps.startProps("/data/data/" + DeviceUtil.getPackageName(this) + "/cat.zip", false);
+        if (!st){
+            Log.e("Visionin", "Set Props Error!");
+        }
         videoFrame.start();
         try {
             com.rex.utils.CameraUtil.mCamera.setPreviewTexture(videoFrame.surfaceTexture());

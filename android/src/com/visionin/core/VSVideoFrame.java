@@ -48,6 +48,19 @@ public class VSVideoFrame extends GPU implements SurfaceTexture.OnFrameAvailable
     private boolean isProcessing=false;
     private boolean isProcessingByte=false;
 
+    /**
+     * 不创建渲染view，一般用于直播云的中间组件
+     * @param glcontext 是否创建glcontext，如果外部已经创建，此处设置为false
+     */
+    public VSVideoFrame(boolean glcontext){
+        super(glcontext);
+    }
+
+    /**
+     * 渲染到surface
+     * @param surface 可以从surfaceview或者mediacodec来
+     * @throws Exception
+     */
     public VSVideoFrame(Surface surface) throws Exception {
         super(surface);
     }

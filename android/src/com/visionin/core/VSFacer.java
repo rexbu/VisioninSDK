@@ -27,6 +27,7 @@ public class VSFacer {
         NativeLoad.registJNIMethod(so, "com/visionin/core/VSFacer", "stopFacerTracking", "()V");
         NativeLoad.registJNIMethod(so, "com/visionin/core/VSFacer", "isFacerTracking", "()Z");
         NativeLoad.registJNIMethod(so, "com/visionin/core/VSFacer", "getFacerMarks", "(I)[F");
+        NativeLoad.registJNIMethod(so, "com/visionin/core/VSFacer", "trackFacer", "([BIII)I");
 
         NativeLoad.registJNIMethod(so, "com/visionin/core/VSFacer", "startShaper", "()V");
         NativeLoad.registJNIMethod(so, "com/visionin/core/VSFacer", "stopShaper", "()V");
@@ -73,7 +74,10 @@ public class VSFacer {
      * 开始人脸追踪
      */
     public static native void startFacerTracking();
-
+    /**
+     *
+     */
+    public static native int trackFacer(byte[] bytes, int width, int height, int rotation);
     /**
      * 结束人脸追踪
      */
@@ -105,6 +109,12 @@ public class VSFacer {
      * 设置整形参数
      */
     public static native void setShapping(int cmd, float strength);
+
+    // 人脸追踪需要调整的角度
+    public static final int FACER_CLOCKWISE_0 = 0;
+    public static final int FACER_CLOCKWISE_90 = 1;
+    public static final int FACER_CLOCKWISE_180 = 2;
+    public static final int FACER_CLOCKWISE_270 = 3;
 
     // 整形部位，分别为眼睛、腮、下巴、鼻子、下颌
     public static final int SHAPER_CMD_EYE = 1;
