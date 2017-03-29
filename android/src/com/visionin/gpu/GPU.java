@@ -47,6 +47,10 @@ public class GPU {
         NativeLoad.registJNIMethod(so, "com/visionin/gpu/GPU", "removeOutputView", "()V");
 	}
 
+    // processTexture函数要处理的texture类型，如果是surfaceTexture，则应该为OES类型
+    public static final int GPU_TEXTURE_RGB = 0;
+    public static final int GPU_TEXTURE_OES = 1;
+
     /// SurfaceTexture相关
     protected static native int createTexture();
     protected static native void destroyTexture(int texture);
@@ -104,8 +108,4 @@ public class GPU {
             makeCurrent(mEGLContext);
         }
     }
-
-    // processTexture函数要处理的texture类型，如果是surfaceTexture，则应该为OES类型
-    public static final int GPU_TEXTURE_RGB = 0;
-    public static final int GPU_TEXTURE_OES = 1;
 }

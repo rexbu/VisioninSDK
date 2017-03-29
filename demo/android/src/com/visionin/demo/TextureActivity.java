@@ -151,8 +151,8 @@ public class TextureActivity extends Activity implements SurfaceHolder.Callback{
     @Override
     public void surfaceDestroyed(SurfaceHolder surfaceHolder) {
         videoFrame.stop();
+        VSProps.stopProps();
         VSFacer.destroyFacer();
-        VSProps.destroyProps();
         videoFrame.destroy();
         videoFrame = null;
     }
