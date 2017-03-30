@@ -3,6 +3,8 @@ VisioninSDK是一个实现移动端视频美颜、视频滤镜、人脸实时关
 
 VisioninSDK是一个跨平台的库，使用C++基于OpenGL ES 2.0实现，VisioninSDK提供了20多个自定义滤镜，VisioninSDK的滤镜结构类似GPUImage。
 
+####_注意：在运行demo时候，不要更改ios的bundlid和android的package_
+
 # 商务合作：
 
 * 手机号: 13911555671
@@ -20,7 +22,7 @@ VisioninSDK是一个跨平台的库，使用C++基于OpenGL ES 2.0实现，Visio
 
 `` [Visionin initialize:@"xxx"];`` 
 
-- 其中xxx为应用的证书
+- 其中xxx为应用的证书，应用证书的获取请联系 QQ 80017290
 
 #### 首先，新建VSVideoFrame对象
 
