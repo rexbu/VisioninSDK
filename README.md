@@ -10,7 +10,7 @@ VisioninSDK是一个移动端的跨平台实时视频处理库，提供了视频
 
 # 演示视频
 
-[![VisioninSDK演示视频](https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1491586585&di=0b2a0a36953e1d06b98b3574bc372c92&imgtype=jpg&er=1&src=http%3A%2F%2F58pic.ooopic.com%2F58pic%2F14%2F82%2F72%2F78i58PIC2mJ.png =160x150)](http://vsdevelop.oss-cn-beijing.aliyuncs.com/000/VisioninDemo.mp4)
+[![VisioninSDK演示视频](http://image.tupian114.com/20140417/14291758.png)](http://vsdevelop.oss-cn-beijing.aliyuncs.com/000/VisioninDemo.mp4)
 
 # iOS接入文档
 ## 1. 美颜|滤镜|换背景
