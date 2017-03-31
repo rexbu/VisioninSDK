@@ -40,7 +40,7 @@ public:
 	void post(const char* url, const char* body, MeCallback* callback = NULL);
 	void put(const char* url, const char* body, MeCallback* callback = NULL);
 	void del(const char* url, MeCallback* callback = NULL);
-	void download(const char* url, DownCallback* callback = NULL);
+	void download(const char* url, const char* path, DownCallback* callback = NULL);
 	// 以下4个函数不能同时调用，第二个会把第一个抹掉
 	const char* restUrl();
 	const char* classUrl();

@@ -21,6 +21,7 @@ public:
     static SocketFrame* initialize(uint32_t timeout=0){
         if (m_instance == NULL) {
             m_instance = new SocketFrame(timeout);
+            m_instance->start();
         }
         return m_instance;
     }
@@ -50,7 +51,7 @@ protected:
     virtual void interruptHandle(){};
     
 protected:
-    bs_lock_t           m_lock;
+    pthread_mutex_t     m_lock;
     AsyncSocket*        m_sock_map[0xffff];
 };
 

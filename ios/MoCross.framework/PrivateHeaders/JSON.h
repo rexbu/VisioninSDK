@@ -98,7 +98,7 @@ public:
     virtual JSONObject jsonValue(const char* name);
     virtual JSONArray arrayValue(const char* name);
     
-    void clear(){
+    virtual void clear(){
         if (m_root!=NULL) {
             cJSON_Delete(m_root);
         }

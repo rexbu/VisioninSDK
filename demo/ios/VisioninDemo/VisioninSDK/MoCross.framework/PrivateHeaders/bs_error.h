@@ -17,6 +17,7 @@
 // 文件相关
 #define BS_NOTFOUND     -10
 #define BS_HASEXIST     -11
+#define BS_CREATERR     -12
 
 // 内存相关
 #define BS_NOMEM        -22

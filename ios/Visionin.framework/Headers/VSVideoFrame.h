@@ -5,16 +5,19 @@
 //  Created by Rex on 16/4/7.
 //  Copyright © 2016年 Rex. All rights reserved.
 //
-
+#import "GL.h"
 #import <Foundation/Foundation.h>
 #import <AVFoundation/AVFoundation.h>
 #import <UIKit/UIKit.h>
 
 #pragma mark - "VSVideoFrame"
 @interface VSVideoFrame : NSObject
-@property(nonatomic, assign) UIView* preview;   // 预览view
-@property(nonatomic, assign) CGSize outputSize; // 输出视频流尺寸，默认(0,0)，表示不裁剪不压缩
+@property(readonly, assign) UIView* preview;   // 预览view
 @property(nonatomic, assign) CGSize videoSize;  // 视频流尺寸
+@property(nonatomic, assign) CGSize outputSize; // 输出视频流尺寸，默认(0,0)，表示不裁剪不压缩
+@property(nonatomic, assign) gpu_rotation_t outputRotation;     // 输出视频流旋转方向，如果设置会使视频流镜像函数失效
+@property(nonatomic, assign) gpu_fill_mode_t outputFillMode;    // 输出视频流裁剪模式
+@property(nonatomic, assign) CGRect viewFrame;  // 预览窗口尺寸
 @property(nonatomic, assign)AVCaptureDevicePosition     cameraPosition;         // 前后摄像头
 @property(nonatomic, assign)UIInterfaceOrientation      outputImageOrientation; // 设备方向，默认UIInterfaceOrientationPortrait
 

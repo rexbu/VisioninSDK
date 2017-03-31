@@ -12,6 +12,7 @@
 
 @interface VSProps : NSObject
 +(VSProps*)shareInstance;
++(void)destroyInstance;
 
 @property(nonatomic, weak)NSString* currentProps;
 @property(nonatomic, readonly)BOOL  propsStatus;
@@ -33,4 +34,5 @@
 // 下载道具包，progress：进度回调, 正常0-100，-1代表下载出错
 //-(void)downloadProps:(NSString*)propsName progress:(void(^)(int percent))progress complete:(void (^)(id error))complete;
 -(void)stopProps;
+
 @end

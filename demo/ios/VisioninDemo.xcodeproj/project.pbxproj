@@ -36,6 +36,7 @@
 		C8ED533A1E5C328E00796B4E /* VSVideoCamera.m in Sources */ = {isa = PBXBuildFile; fileRef = C8ED53391E5C328E00796B4E /* VSVideoCamera.m */; };
 		C8ED533F1E5C32B000796B4E /* facer.model in Resources */ = {isa = PBXBuildFile; fileRef = C8ED533D1E5C32B000796B4E /* facer.model */; };
 		C8ED53401E5C32B000796B4E /* visionin.res in Resources */ = {isa = PBXBuildFile; fileRef = C8ED533E1E5C32B000796B4E /* visionin.res */; };
+		C8F192181E8EAED300A6D552 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C8F192161E8EAED300A6D552 /* HomeViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -80,14 +81,12 @@
 		C8ED53251E5C322500796B4E /* libz.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.dylib; path = ../../../../../../../usr/lib/libz.1.dylib; sourceTree = "<group>"; };
 		C8ED53271E5C323300796B4E /* libc++.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.1.dylib"; path = "../../../../../../../usr/lib/libc++.1.dylib"; sourceTree = "<group>"; };
 		C8ED53291E5C324700796B4E /* libstdc++.6.0.9.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.6.0.9.dylib"; path = "../../../../../../../usr/lib/libstdc++.6.0.9.dylib"; sourceTree = "<group>"; };
-		C8ED53341E5C327E00796B4E /* VSFacer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSFacer.h; path = VisioninSDK/include/VSFacer.h; sourceTree = "<group>"; };
-		C8ED53351E5C327E00796B4E /* VSProps.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSProps.h; path = VisioninSDK/include/VSProps.h; sourceTree = "<group>"; };
-		C8ED53361E5C327E00796B4E /* Visionin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Visionin.h; path = VisioninSDK/include/Visionin.h; sourceTree = "<group>"; };
-		C8ED53371E5C327E00796B4E /* VSVideoFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSVideoFrame.h; path = VisioninSDK/include/VSVideoFrame.h; sourceTree = "<group>"; };
-		C8ED53381E5C327E00796B4E /* VSVideoCamera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSVideoCamera.h; path = VisioninSDK/include/VSVideoCamera.h; sourceTree = "<group>"; };
 		C8ED53391E5C328E00796B4E /* VSVideoCamera.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSVideoCamera.m; path = VisioninSDK/VSVideoCamera.m; sourceTree = "<group>"; };
 		C8ED533D1E5C32B000796B4E /* facer.model */ = {isa = PBXFileReference; lastKnownFileType = file; name = facer.model; path = VisioninSDK/facer.model; sourceTree = "<group>"; };
 		C8ED533E1E5C32B000796B4E /* visionin.res */ = {isa = PBXFileReference; lastKnownFileType = file; name = visionin.res; path = VisioninSDK/visionin.res; sourceTree = "<group>"; };
+		C8F192161E8EAED300A6D552 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
+		C8F192171E8EAED300A6D552 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
+		C8F192191E8EAF5B00A6D552 /* VSVideoCamera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSVideoCamera.h; path = VisioninSDK/VSVideoCamera.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,20 +137,22 @@
 		C8ED52D01E5C30BA00796B4E /* VisioninDemo */ = {
 			isa = PBXGroup;
 			children = (
+				C8ED52D41E5C30BA00796B4E /* AppDelegate.h */,
+				C8ED52D51E5C30BA00796B4E /* AppDelegate.m */,
+				C8ED52DD1E5C30BA00796B4E /* Assets.xcassets */,
 				C84B840D1E6EC7A000FAE377 /* cat.zip */,
 				C8ED533D1E5C32B000796B4E /* facer.model */,
-				C8ED533E1E5C32B000796B4E /* visionin.res */,
-				C8ED52D41E5C30BA00796B4E /* AppDelegate.h */,
-				C8ED52D71E5C30BA00796B4E /* ViewController.h */,
-				C8ED52D51E5C30BA00796B4E /* AppDelegate.m */,
-				C8ED52D81E5C30BA00796B4E /* ViewController.m */,
-				C8ED53391E5C328E00796B4E /* VSVideoCamera.m */,
+				C8F192171E8EAED300A6D552 /* HomeViewController.h */,
+				C8F192161E8EAED300A6D552 /* HomeViewController.m */,
 				C8ED52E21E5C30BA00796B4E /* Info.plist */,
-				C8ED52DD1E5C30BA00796B4E /* Assets.xcassets */,
 				C8ED52DF1E5C30BA00796B4E /* LaunchScreen.storyboard */,
 				C8ED52DA1E5C30BA00796B4E /* Main.storyboard */,
 				C8ED52D11E5C30BA00796B4E /* Supporting Files */,
-				C8ED53331E5C326500796B4E /* VisioninSDK */,
+				C8ED52D71E5C30BA00796B4E /* ViewController.h */,
+				C8ED52D81E5C30BA00796B4E /* ViewController.m */,
+				C8ED533E1E5C32B000796B4E /* visionin.res */,
+				C8F192191E8EAF5B00A6D552 /* VSVideoCamera.h */,
+				C8ED53391E5C328E00796B4E /* VSVideoCamera.m */,
 			);
 			path = VisioninDemo;
 			sourceTree = "<group>";
@@ -184,18 +185,6 @@
 				C8ED53111E5C31B700796B4E /* MediaPlayer.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		C8ED53331E5C326500796B4E /* VisioninSDK */ = {
-			isa = PBXGroup;
-			children = (
-				C8ED53341E5C327E00796B4E /* VSFacer.h */,
-				C8ED53351E5C327E00796B4E /* VSProps.h */,
-				C8ED53361E5C327E00796B4E /* Visionin.h */,
-				C8ED53371E5C327E00796B4E /* VSVideoFrame.h */,
-				C8ED53381E5C327E00796B4E /* VSVideoCamera.h */,
-			);
-			name = VisioninSDK;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -277,6 +266,7 @@
 				C8ED52D91E5C30BA00796B4E /* ViewController.m in Sources */,
 				C8ED52D61E5C30BA00796B4E /* AppDelegate.m in Sources */,
 				C8ED52D31E5C30BA00796B4E /* main.m in Sources */,
+				C8F192181E8EAED300A6D552 /* HomeViewController.m in Sources */,
 				C8ED533A1E5C328E00796B4E /* VSVideoCamera.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -405,11 +395,12 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/VisioninDemo/VisioninSDK",
 				);
+				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/VisioninDemo/VisioninSDK/Visionin.framework/Headers";
 				INFOPLIST_FILE = VisioninDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
 					"$(PROJECT_DIR)/VisioninDemo/VisioninSDK",
+					"$(inherited)",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.visionin.demo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -426,11 +417,12 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/VisioninDemo/VisioninSDK",
 				);
+				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/VisioninDemo/VisioninSDK/Visionin.framework/Headers";
 				INFOPLIST_FILE = VisioninDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
 					"$(PROJECT_DIR)/VisioninDemo/VisioninSDK",
+					"$(inherited)",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.visionin.demo;
 				PRODUCT_NAME = "$(TARGET_NAME)";

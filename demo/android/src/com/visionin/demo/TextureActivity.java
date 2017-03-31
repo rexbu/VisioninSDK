@@ -78,10 +78,6 @@ public class TextureActivity extends Activity implements SurfaceHolder.Callback{
 
     @Override
     protected void onPause() {
-        if (videoFrame!=null){
-            videoFrame.stop();
-        }
-        com.rex.utils.CameraUtil.releaseCamera();
         super.onPause();
     }
 
@@ -150,10 +146,13 @@ public class TextureActivity extends Activity implements SurfaceHolder.Callback{
 
     @Override
     public void surfaceDestroyed(SurfaceHolder surfaceHolder) {
-        videoFrame.stop();
-        VSProps.stopProps();
+        if (videoFrame!=null){
+            videoFrame.stop();
+        }
+        VSProps.destroyProps();
         VSFacer.destroyFacer();
         videoFrame.destroy();
+        com.rex.utils.CameraUtil.releaseCamera();
         videoFrame = null;
     }
 

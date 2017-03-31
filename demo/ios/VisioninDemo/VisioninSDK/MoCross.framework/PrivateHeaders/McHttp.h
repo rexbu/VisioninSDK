@@ -40,13 +40,6 @@ public:
     virtual void done(int http_code, status_t st, const char* location) = 0;
 };
 
-typedef enum{
-    HTTP_GET,
-    HTTP_POST,
-    HTTP_PUT,
-    HTTP_DELETE
-}http_method_t;
-
 class IOSEnv;
 /// http
 class HttpSession{
@@ -57,12 +50,12 @@ public:
     virtual void post(const char* url, const char* body, uint32_t length = 0,HttpCallback* callback = NULL);
     virtual void put(const char* url, const char* body, uint32_t length = 0,HttpCallback* callback = NULL);
     virtual void del(const char* url, HttpCallback* callback = NULL);
-    virtual void http(const char* url, http_method_t method, const char* body = NULL, uint32_t length = 0, HttpCallback* callback = NULL);
-    virtual void httpSync(const char* url, http_method_t method, const char* body = NULL, uint32_t length = 0, HttpCallback* callback = NULL);
-    virtual void download(const char* url, DownCallback* callback);
+    
+    virtual void http(const char* url, const char* method, const char* body = NULL, uint32_t length = 0, HttpCallback* callback = NULL);
+    virtual void download(const char* url, const char* path, DownCallback* callback);
+    
     void addHttpHeader(const char* key, const char* value);
     
-    static pthread_mutex_t* m_thread_locks; // 多线程ssl锁
     const static uint32_t   HTTP_TIMEOUT = 10;      // 过期时间
 protected:
     void setOpt(void* curl, http_method_t method, const char* body, uint32_t length);
@@ -78,6 +71,7 @@ protected:
 class HttpsSession: public HttpSession{
 public:
 };
-    
+
 }
+
 #endif

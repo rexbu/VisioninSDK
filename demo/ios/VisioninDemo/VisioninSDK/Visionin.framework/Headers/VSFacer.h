@@ -6,6 +6,7 @@
 //  Copyright © 2016年 Visionin. All rights reserved.
 //
 
+#import "GL.h"
 #import <Foundation/Foundation.h>
 #import <AVFoundation/AVFoundation.h>
 #import <UIKit/UIKit.h>
@@ -16,8 +17,10 @@
 @property(nonatomic, assign) BOOL facerShaping;
 // 是否显示人脸追踪的标记
 @property(nonatomic, assign) BOOL  faceMarking;
+@property(nonatomic, assign) gpu_orientation_t faceOrientation; // 人脸方向
 
 +(VSFacer*)shareInstance;
++(void)destroyInstance;
 
 // 开启人脸追踪
 -(void)startFaceTracking;

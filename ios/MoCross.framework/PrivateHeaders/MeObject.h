@@ -52,6 +52,7 @@ public:
     virtual void copy(JSONObject* obj, bool auth= true);
     void copySelf(JSONObject *obj, bool auth = true);
     
+    virtual void clear();
     /// 从文件反序列化
     virtual bool deserialize(const char* path);
     

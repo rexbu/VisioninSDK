@@ -25,7 +25,7 @@ public:
     void onRead();
     void onWrite(){}
     void onError(int error){}
-    void onMessage(sock_message_t* msg){
+    void onMessage(sock_msg_t* msg){
         int sock = *((int*)msg->buf);
         AsyncSocket* socket = createSocket(sock);
         SocketFrame::instance()->append(socket);

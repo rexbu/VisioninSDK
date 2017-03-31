@@ -18,7 +18,7 @@
 
     <Button
         android:id="@+id/bytesButton"
-        android:text="处理Bytes的Demo(速度较慢)"
+        android:text="处理Bytes的Demo(暂不可用)"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"

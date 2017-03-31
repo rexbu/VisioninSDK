@@ -12,6 +12,8 @@
 #import "VSProps.h"
 #import "VSFacer.h"
 
+static bool initViewFlag = true;
+
 @interface ViewController (){
     VSVideoCamera*  videoCamera;
     UITextView*     smoothView;
@@ -67,7 +69,7 @@ BOOL canRotateToAllOrientations;
     
     // 加载贴纸
     NSString* props = [[NSBundle mainBundle] pathForResource:@"cat" ofType:@"zip"];
-    //[[VSProps shareInstance] startLocalProps:props];
+    [[VSProps shareInstance] startLocalProps:props];
     
     //    __block typeof(self) parent = self;
     //    [videoCamera setBgraPixelBlock:^(CVPixelBufferRef pixelBuffer, CMTime time) {
@@ -103,9 +105,10 @@ BOOL canRotateToAllOrientations;
     // [self.view addSubview:videoView];
     
     UIButton* record = [[UIButton alloc]initWithFrame:CGRectMake(10, 20, 60, 40)];
-    [record setTitle:@"开始" forState:UIControlStateNormal];
+    [record setTitle:@"返回" forState:UIControlStateNormal];
     [record setBackgroundColor:[UIColor orangeColor]];
-    [record addTarget:self action:@selector(startVideo) forControlEvents:UIControlEventTouchUpInside];
+    [record addTarget:self action:@selector(back) forControlEvents:UIControlEventTouchUpInside];
+    
     UIButton* stop = [[UIButton alloc]initWithFrame:CGRectMake(80, 20, 60, 40)];
     [stop setTitle:@"停止" forState:UIControlStateNormal];
     [stop setBackgroundColor:[UIColor orangeColor]];
@@ -184,9 +187,13 @@ BOOL canRotateToAllOrientations;
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(orientationChanged:) name:UIDeviceOrientationDidChangeNotification object:nil];
 }
 
--(void)startVideo{
-    [self initVideoFrame];
-    [videoCamera startCameraCapture];
+-(void)back{
+    [videoCamera stopCameraCapture];
+    [VSProps destroyInstance];
+    [VSFacer destroyInstance];
+    videoCamera = nil;
+    initViewFlag = true;
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 -(void)stopVideo{
@@ -196,10 +203,9 @@ BOOL canRotateToAllOrientations;
 
 - (void)viewDidLayoutSubviews {
     //self.view setBounds:CGRectMake(0, 0, self.view, CGFloat height)
-    static bool flag = true;
-    if (flag) {
+    if (initViewFlag) {
         [self initView];
-        flag = false;
+        initViewFlag = false;
     }
 }
 

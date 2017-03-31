@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "HomeViewController.h"
 
 @interface AppDelegate ()
 
@@ -17,6 +18,14 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    self.window.backgroundColor = [UIColor whiteColor];
+    
+    //((__bridge UIView*)f->rootUIView()).backgroundColor = [UIColor orangeColor];
+    self.window.rootViewController = [[HomeViewController alloc] init];
+    
+    [self.window makeKeyAndVisible];
+    
     return YES;
 }
 

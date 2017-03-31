@@ -15,15 +15,21 @@
 #include <jni.h>
 #endif
 
-typedef struct sock_message_t{
+typedef struct sock_msg_t{
+    object_t            base;
     int                 sock;
-    uint32_t            size;
-    char                buf[SOCKET_UDP_MTU];
+    int                 size;
+    char*               buf;
     struct sockaddr_in  addr;
     // 额外参数，目前用法指向AsyncSocket，用于AsyncQueue的回调
     void*               arg;
-} sock_message_t;
+    char                temp[SOCKET_UDP_MTU];
+} sock_msg_t;
 
+void* sock_msg_init(void* p);
+void  sock_msg_destroy(void* p);
+
+// message的异步执行线程
 void* sock_on_message(void* arg);
 
 class AsyncSocket{
@@ -39,7 +45,7 @@ public:
     virtual void onRead();
     virtual void onWrite() = 0;
     virtual void onError(int error) = 0;
-    virtual void onMessage(sock_message_t* msg) = 0;
+    virtual void onMessage(sock_msg_t* msg) = 0;
 
 protected:
     int                 m_sock;

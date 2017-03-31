@@ -23,7 +23,7 @@
 #define bs_is_highletter(code)  ('A'<=(code) && (code)<='Z')
 #define bs_is_letter(code)      (bs_is_lowletter(code)||bs_is_highletter(code))
 #define bs_is_char(code)        (bs_is_num(code) || bs_is_letter(code))
-#define bs_is_space(code)       ((code)==' ' || (code)=='\t' || (code)=='\n')
+#define bs_is_space(code)       ((code)==' ' || (code)=='\t' || (code)=='\n' || (code)=='\r')
 
 // 判断是否为2的幂
 #define bs_is_powerof2(i)       (((i)&((i)-1))==0)
@@ -65,7 +65,8 @@ uint32_t bs_strcpy(void* src, uint32_t src_size, const void* dst);
 uint32_t bs_memcpy(void* src, uint32_t src_size, const void* dst, uint32_t dst_size);
 void bs_strswap(void* src, uint32_t src_size, char* dst, uint32_t dst_size);
 char* bs_strrstr(const char* src, const char* dst);
-
+int bs_log2(int x); // 快速计算以2位底数的对数
+    
 #ifndef COMPILE_MAC
 state_t convert(const char *fromset, const char *toset, char *from,uint32_t from_len, char *to,uint32_t to_len);
 #endif

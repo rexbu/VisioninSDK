@@ -42,12 +42,13 @@ public:
         if (m_running) {
             return m_thread;
         }
+        
+        m_running = true;
         return Thread::start();
     }
     
     virtual void loop() = 0;
     virtual void run(){
-        m_running = true;
         while(m_running){
             loop();
         }

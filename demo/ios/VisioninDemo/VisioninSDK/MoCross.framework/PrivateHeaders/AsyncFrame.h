@@ -14,13 +14,17 @@
 
 class AsyncFrame: public LoopThread{
 public:
-    AsyncFrame(uint32_t time=0);
+    AsyncFrame(uint32_t time=0, bool ispipe=true);
     ~AsyncFrame(){}
     // Override
     void stop();
     void loop();
     // 让select立刻返回
     void interrupt();
+    
+    const static int FRAME_STATE_IDLE = 0;
+    const static int FRAME_STATE_LISTEN = 1;
+    const static int FRAME_STATE_HANDLE = 2;
     
 protected:
     // select立刻返回后的处理函数
@@ -32,7 +36,9 @@ protected:
     int             m_max_sock;
     // 0代表超时或者select interrupt，无socket准备就绪
     int             m_select_rv;
+    int             m_frame_state;
     
+    bool            m_ispipe;
     fd_set          m_read_set;
     fd_set          m_write_set;
     fd_set          m_error_set;

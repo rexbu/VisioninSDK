@@ -49,10 +49,10 @@ extern "C"{
 
 #ifdef __ANDROID__
 
-#define err_log(log, args...)		__android_log_print(LOG_ERR, __FUNCTION__, log, ##args);
-#define warn_log(log, args...)		__android_log_print(LOG_WARNING, __FUNCTION__, log, ##args);
-#define info_log(log, args...)		__android_log_print(LOG_INFO, __FUNCTION__, log, ##args);
-#define debug_log(log, args...)		__android_log_print(LOG_DEBUG, __FUNCTION__, log, ##args);
+#define err_log(log, args...)		__android_log_print(LOG_ERR, "Visionin", log, ##args);
+#define warn_log(log, args...)		__android_log_print(LOG_WARNING, "Visionin", log, ##args);
+#define info_log(log, args...)		__android_log_print(LOG_INFO, "Visionin", log, ##args);
+#define debug_log(log, args...)		__android_log_print(LOG_DEBUG, "Visionin", log, ##args);
 
 #else
 
