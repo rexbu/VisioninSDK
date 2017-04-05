@@ -2,7 +2,7 @@
 <resources>
     <string name="app_name">VisioninDemo</string>
     <string-array name="filter_name">
-        <item>滤镜: origin</item>
+        <item>origin</item>
         <item>nature</item>
         <item>clean</item>
         <item>vivid</item>

@@ -45,6 +45,7 @@ public class TextureActivity extends Activity implements SurfaceHolder.Callback{
     protected Spinner filterSpinner;
     protected TextView smoothText;
     protected SeekBar smoothValueSeek;
+    protected SeekBar shaperValueSeek;
     protected boolean isProps = true;
     protected boolean isShaper = true;
 
@@ -187,6 +188,7 @@ public class TextureActivity extends Activity implements SurfaceHolder.Callback{
         smoothValueSeek = (SeekBar)findViewById(R.id.smoothValueBar);
         smoothText.setText("磨皮：0.9");
         smoothValueSeek.setProgress(90);
+        shaperValueSeek = (SeekBar)findViewById(R.id.shaperValueBar);
 
         swtichButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -194,19 +196,23 @@ public class TextureActivity extends Activity implements SurfaceHolder.Callback{
                 rotateCamera();
             }
         });
+
         shaperButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if (isShaper){
+                    shaperButton.setText("开整形");
                     VSFacer.stopShaper();
                     isShaper = false;
                 }
                 else{
+                    shaperButton.setText("关整形");
                     VSFacer.startShaper();
                     isShaper = true;
                 }
             }
         });
+
         propsButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -225,7 +231,8 @@ public class TextureActivity extends Activity implements SurfaceHolder.Callback{
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 if (videoFrame!=null){
-                    videoFrame.setExtraFilter(getResources().getStringArray(R.array.filter_name)[i]);
+                    String filter = getResources().getStringArray(R.array.filter_name)[i];
+                    videoFrame.setExtraFilter(filter);
                 }
             }
 
@@ -252,6 +259,29 @@ public class TextureActivity extends Activity implements SurfaceHolder.Callback{
                     float strength = value*(float)1.0/100;
                     videoFrame.setSmoothStrength(strength);
                     smoothText.setText("磨皮："+ strength);
+                }
+            }
+        });
+        shaperValueSeek.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            public int value;
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
+                value = i;
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+                if (videoFrame!=null){
+                    float strength = value*(float)1.0/100;
+                    VSFacer.setShapping(VSFacer.SHAPER_CMD_EYE, strength);
+                    VSFacer.setShapping(VSFacer.SHAPER_CMD_FACE, strength);
+                    VSFacer.setShapping(VSFacer.SHAPER_CMD_CHIN, strength);
+                    VSFacer.setShapping(VSFacer.SAHPER_CMD_CHEEK, strength);
                 }
             }
         });
