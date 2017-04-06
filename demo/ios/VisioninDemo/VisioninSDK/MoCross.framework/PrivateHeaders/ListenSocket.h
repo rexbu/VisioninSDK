@@ -2,7 +2,7 @@
  * file :	ListenSocket.h
  * author :	bushaofeng
  * create :	2014-10-09 18:36
- * func : 
+ * func :   监听
  * history:
  */
 

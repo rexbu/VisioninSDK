@@ -2,7 +2,7 @@
  * file :	thread.h
  * author :	bushaofeng
  * create :	2014-10-04 22:30
- * func :   thread基类
+ * func :   线程基类
  * history:
  */
 

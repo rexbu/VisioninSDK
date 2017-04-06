@@ -2,7 +2,7 @@
  * file :	HttpEntity.h
  * author :	Rex
  * create :	2017-03-16 14:04
- * func :   一个高性能异步http
+ * func :   一个长连接的高性能异步http
  * history:
  */
 

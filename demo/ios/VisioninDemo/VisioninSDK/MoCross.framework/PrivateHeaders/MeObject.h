@@ -27,10 +27,13 @@ public:
 	MeObject(const char* className, JSONObject* obj = NULL);
     ~MeObject();
 
+    inline const char* className(){ return m_classname; }
+    inline const char* objectId(){ return m_objectid; }
+    
     void setClassName(const char* className);
-    const char* className(){ return m_classname; }
     void setDb(const char* db);
-    const char* objectId(){ return m_objectid; }
+    // 添加唯一索引, 只在post时生效
+    void addUniqueKey(const char* key);
 
     virtual void put(const char* name, const char* value);
     virtual void put(const char* name, double value);
@@ -66,6 +69,7 @@ protected:
     JSONObject              m_inc_dirty;
     //TODO: 暂时只考虑了从服务器下载数据的解析
     map<string, MeObject*>  m_object_map;
+    vector<string>          m_unique_key;
     
     // 存储save传进来的callback，目前只支持一个callback，一次save完成之后才能进行下次save
     MeCallback*     m_callback;

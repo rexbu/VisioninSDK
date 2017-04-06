@@ -19,6 +19,7 @@
 #include "SharedPreferences.h"
 #include "McTask.h"
 #include "ThreadPool.h"
+#include "McTimer.h"
 
 // 内存管理好烦啊
 // 异步删除内存，用于回调中删除自己

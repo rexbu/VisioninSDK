@@ -13,6 +13,7 @@
 #include "MeObject.h"
 #include "MeUser.h"
 #include "MeFile.h"
+#include "MeDevice.h"
 #include "MeTimeStat.h"
 #include "MeQuery.h"
 #include "MeCallback.h"

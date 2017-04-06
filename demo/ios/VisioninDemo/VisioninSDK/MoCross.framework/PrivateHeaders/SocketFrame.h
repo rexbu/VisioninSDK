@@ -2,7 +2,7 @@
  * file :	SocketFrame.h
  * author :	bushaofeng
  * create :	2014-10-05 06:43
- * func :
+ * func :   Socket异步框架
  * history:
  */
 

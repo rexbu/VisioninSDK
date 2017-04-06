@@ -2,7 +2,7 @@
  * file :	File.h
  * author :	bushaofeng
  * create :	2016-08-27 01:01
- * func : 
+ * func :   文件及文件夹管理
  * history:
  */
 

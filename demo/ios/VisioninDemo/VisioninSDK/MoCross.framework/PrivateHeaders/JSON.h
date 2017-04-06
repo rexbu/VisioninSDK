@@ -2,7 +2,7 @@
  * file :	JSON.h
  * author :	Rex
  * create :	2016-09-19 18:52
- * func : 
+ * func :   JSON封装，基于cJson实现
  * history:
  */
 

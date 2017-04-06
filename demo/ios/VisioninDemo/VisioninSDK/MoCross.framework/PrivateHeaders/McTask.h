@@ -2,7 +2,7 @@
  * file :	McTask.h
  * author :	Rex
  * create :	2016-11-03 17:00
- * func : 
+ * func :   基于管道的异步，推荐使用TheadPool
  * history:
  */
 

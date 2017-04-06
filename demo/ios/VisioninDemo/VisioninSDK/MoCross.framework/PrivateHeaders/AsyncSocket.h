@@ -2,7 +2,7 @@
  * file :	AsyncSocket.h
  * author :	bushaofeng
  * create :	2014-10-04 22:39
- * func :   一次发包不能超过mtu大小
+ * func :   异步Socket, 一次发包不能超过mtu大小
  * history:
  */
 

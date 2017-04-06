@@ -16,8 +16,10 @@ public:
     MeUser();
     MeUser(JSONObject* obj);
     
+    // 验证码注册
+    void signin(const char* username, const char* password, const char* authcode, MeCallback_func callback);
+    // 登录
     void login(const char* username, const char* password, MeCallback* callback);
-    void loginWithoutPwd(const char* username, MeCallback* callback);
     void logout();
     
     static MeUser* currentUser();
@@ -30,7 +32,7 @@ protected:
     static MeUser*      m_current_user;
     static const char*  m_version;
     
-    MeCallback* m_callback;
+    MeCallback_func m_callback;
 };
 
 #endif

@@ -2,7 +2,7 @@
  * file :	McDevice.h
  * author :	Rex
  * create :	2016-10-26 15:28
- * func : 
+ * func :   设备及系统相关
  * history:
  */
 

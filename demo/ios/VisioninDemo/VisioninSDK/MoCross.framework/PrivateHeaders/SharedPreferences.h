@@ -2,7 +2,7 @@
  * file :	SharedPreferences.h
  * author :	Rex
  * create :	2016-10-21 15:46
- * func : 
+ * func :   轻量级json存储
  * history:
  */
 

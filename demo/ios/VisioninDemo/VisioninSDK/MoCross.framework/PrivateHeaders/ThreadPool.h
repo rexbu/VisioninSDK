@@ -2,7 +2,7 @@
  * file :	ThreadPool.h
  * author :	Rex
  * create :	2017-02-22 23:40
- * func : 
+ * func :   线程池，用于异步
  * history:
  */
 
