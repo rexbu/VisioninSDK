@@ -64,7 +64,7 @@ public class TextureActivity extends Activity implements SurfaceHolder.Callback{
 
         surfaceView = (SurfaceView) findViewById(R.id.camera_surfaceView);
         surfaceHolder = surfaceView.getHolder();
-        imageView = (ImageView)findViewById(R.id.cmaera_iamgeView);
+        // imageView = (ImageView)findViewById(R.id.cmaera_iamgeView);
 
         isFront = true;
         initView();
@@ -119,7 +119,7 @@ public class TextureActivity extends Activity implements SurfaceHolder.Callback{
                 if (point!=null){
                     //Log.e("Facer", "face第一个点  x:"+point[0]+" y:"+point[1]);
                 }
-                imageView.setImageBitmap(yuv420p2RGBABitmap(bytes, 360, 640));
+                //imageView.setImageBitmap(yuv420p2RGBABitmap(bytes, 360, 640));
             }
         });
 
