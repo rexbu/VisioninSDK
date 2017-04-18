@@ -142,7 +142,13 @@ public class TextureActivity extends Activity implements SurfaceHolder.Callback{
 
     @Override
     public void surfaceChanged(SurfaceHolder surfaceHolder, int i, int i1, int i2) {
-
+        Configuration configuration = this.getResources().getConfiguration(); //获取设置的配置信息
+        if (configuration.orientation==Configuration.ORIENTATION_LANDSCAPE){
+            videoFrame.setOutputImageOritation(Configuration.ORIENTATION_LANDSCAPE);
+        }
+        else{
+            videoFrame.setOutputImageOritation(Configuration.ORIENTATION_PORTRAIT);
+        }
     }
 
     @Override
