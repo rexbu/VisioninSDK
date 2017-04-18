@@ -130,13 +130,15 @@ public class FileUtil {
     public static Bitmap readPNG(String path){
         BitmapFactory.Options options = new BitmapFactory.Options();
         options.inScaled = false;
-        return BitmapFactory.decodeFile(path, options);
+        Bitmap b =  BitmapFactory.decodeFile(path, options);
+        return b;
     }
 
     public static Bitmap readPNG(byte[] bytes){
         BitmapFactory.Options options = new BitmapFactory.Options();
         options.inScaled = false;
-        return BitmapFactory.decodeByteArray(bytes, 0, bytes.length, options);
+        Bitmap b = BitmapFactory.decodeByteArray(bytes, 0, bytes.length, options);
+        return b;
     }
 
     public static boolean unzip(String src, String dest){

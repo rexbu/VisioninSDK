@@ -37,15 +37,5 @@ public class MainActivity extends Activity {
                 MainActivity.this.startActivity(intent);
             }
         });
-
-        File[] files = new File("/data/data/"+this.getPackageName()).listFiles();
-        for (int i=0; i<files.length; i++) {
-            Log.e("Visionin", files[i].getName());
-            Log.e("Path", files[i].getAbsolutePath());
-        }
-        files = new File("/data/data/com.visionin.demo/__resource").listFiles();
-        for (int i=0; i<files.length; i++) {
-            Log.e("Lib", files[i].getName());
-        }
     }
 }

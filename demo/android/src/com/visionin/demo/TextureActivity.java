@@ -54,9 +54,18 @@ public class TextureActivity extends Activity implements SurfaceHolder.Callback{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_texture);
 
+        // 拷贝需要的道具文件及logo
         try {
             InputStream is = this.getResources().getAssets().open("cat.zip");
             OutputStream os = FileUtil.fileOutputStream("/data/data/"+ DeviceUtil.getPackageName(this) +"/cat.zip");
+            FileUtil.write(os, is);
+
+            is = this.getResources().getAssets().open("rabbit.zip");
+            os = FileUtil.fileOutputStream("/data/data/"+ DeviceUtil.getPackageName(this) +"/rabbit.zip");
+            FileUtil.write(os, is);
+
+            is = this.getResources().getAssets().open("logo.png");
+            os = FileUtil.fileOutputStream("/data/data/"+ DeviceUtil.getPackageName(this) +"/logo.png");
             FileUtil.write(os, is);
         } catch (IOException e) {
             e.printStackTrace();
@@ -64,7 +73,7 @@ public class TextureActivity extends Activity implements SurfaceHolder.Callback{
 
         surfaceView = (SurfaceView) findViewById(R.id.camera_surfaceView);
         surfaceHolder = surfaceView.getHolder();
-        // imageView = (ImageView)findViewById(R.id.cmaera_iamgeView);
+        imageView = (ImageView)findViewById(R.id.cmaera_iamgeView);
 
         isFront = true;
         initView();
@@ -119,18 +128,28 @@ public class TextureActivity extends Activity implements SurfaceHolder.Callback{
                 if (point!=null){
                     //Log.e("Facer", "face第一个点  x:"+point[0]+" y:"+point[1]);
                 }
-                //imageView.setImageBitmap(yuv420p2RGBABitmap(bytes, 360, 640));
+                imageView.setImageBitmap(yuv420p2RGBABitmap(bytes, 360, 640));
             }
         });
 
+        // 开启人脸及整形
         VSFacer.initialize(this);
         VSFacer.startFacerTracking();
-
         VSFacer.startShaper();
+
+        /// 设置道具，加载2个道具
         boolean st = VSProps.startProps("/data/data/" + DeviceUtil.getPackageName(this) + "/cat.zip", false);
         if (!st){
             Log.e("Visionin", "Set Props Error!");
         }
+        st = VSProps.startProps2("/data/data/" + DeviceUtil.getPackageName(this) + "/rabbit.zip", false);
+        if (!st){
+            Log.e("Visionin", "Set Props Error!");
+        }
+
+        // 设置logo
+        videoFrame.setPreviewBlend("/data/data/"+ DeviceUtil.getPackageName(this) +"/logo.png", 0.8f, 0.1f, 0.1f, 0.1f);
+        videoFrame.setVideoBlend("/data/data/"+ DeviceUtil.getPackageName(this) +"/logo.png", 0.8f, 0.5f, 0.1f, 0.1f);
         videoFrame.start();
         try {
             com.rex.utils.CameraUtil.mCamera.setPreviewTexture(videoFrame.surfaceTexture());

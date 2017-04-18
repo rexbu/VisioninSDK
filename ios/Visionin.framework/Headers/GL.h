@@ -68,7 +68,10 @@ typedef struct gpu_point_t{
 
 typedef struct gpu_rect_t{
     gpu_point_t pointer;
-    gpu_size_t  size;
+    struct {
+        float   width;
+        float   height;
+    }size;
 }gpu_rect_t;
 
 typedef enum {

@@ -45,6 +45,9 @@ public class GPU {
 
         NativeLoad.registJNIMethod(so, "com/visionin/gpu/GPU", "setOutputView", "()V");
         NativeLoad.registJNIMethod(so, "com/visionin/gpu/GPU", "removeOutputView", "()V");
+
+        NativeLoad.registJNIMethod(so, "com/visionin/gpu/GPU", "setPreviewBlend", "(Ljava/lang/String;FFFF)V");
+        NativeLoad.registJNIMethod(so, "com/visionin/gpu/GPU", "setVideoBlend", "(Ljava/lang/String;FFFF)V");
 	}
 
     // processTexture函数要处理的texture类型，如果是surfaceTexture，则应该为OES类型
@@ -56,21 +59,21 @@ public class GPU {
     protected static native void destroyTexture(int texture);
     /// EGLContext
     protected native long eglContext(boolean active);
-    protected native void setRenderSurface(Surface surface);
-    protected native void makeCurrent(long context);
-    protected native void destroyEGL(long context);
+    public native void setRenderSurface(Surface surface);
+    public native void makeCurrent(long context);
+    public native void destroyEGL(long context);
 
     /// c处理
-    protected native void processTexture(int texture, int texture_type);
-    protected native void processBytes(byte[] bytes, int width, int height, int format);
+    public native void processTexture(int texture, int texture_type);
+    public native void processBytes(byte[] bytes, int width, int height, int format);
     public native void getBytes(byte[] bytes);
     public native int getTexture();
     /// 输出
-    protected native void setOutputSize(int width, int height);
-    protected native void setOutputFormat(int format);
+    public native void setOutputSize(int width, int height);
+    public native void setOutputFormat(int format);
     /// 输入
-    protected native void setInputSize(int width, int height);
-    protected native void setInputRotation(int rotation);
+    public native void setInputSize(int width, int height);
+    public native void setInputRotation(int rotation);
     /// 镜像
     public native void setPreviewMirror(boolean mirror);
     public native void setOutputMirror(boolean mirror);
@@ -89,6 +92,33 @@ public class GPU {
     /// 预览
     public native void setOutputView();
     public native void removeOutputView();
+
+    // blend可用于logo
+
+    /**
+     * 预览添加叠加渲染图片，可用于logo，仅用于预览，不会在视频流中生效
+     * @param path  图片路径
+     * @param x     叠加位置左上角x坐标，归一化坐标，0-1
+     * @param y     叠加位置左上角y坐标，归一化坐标，0-1
+     * @param w     叠加图片宽度，归一化坐标，0-1
+     * @param h     叠加图片高度，归一化坐标，0-1
+     */
+    public native void setPreviewBlend(String path, float x, float y, float w, float h);
+    /**
+     * 视频流添加叠加渲染图片，可用于logo，仅用于视频流，不会在预览窗口中生效
+     * @param path  图片路径
+     * @param x     叠加位置左上角x坐标，归一化坐标，0-1
+     * @param y     叠加位置左上角y坐标，归一化坐标，0-1
+     * @param w     叠加图片宽度，归一化坐标，0-1
+     * @param h     叠加图片高度，归一化坐标，0-1
+     */
+    public native void setVideoBlend(String path, float x, float y, float w, float h);
+    public void removePreviewBlend(){
+        setPreviewBlend(null, 0, 0, 0, 0);
+    }
+    public void removeVideoBlend(){
+        setVideoBlend(null, 0, 0, 0, 0);
+    }
 
     protected long  mEGLContext = 0;
     protected int   mProcessMode = 0;

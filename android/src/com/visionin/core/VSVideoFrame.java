@@ -227,7 +227,7 @@ public class VSVideoFrame extends GPU implements SurfaceTexture.OnFrameAvailable
         super.setOutputSize(width, height);
         setOutputFormat(outputFormat);
     }
-    protected void setOutputFormat(int format){
+    public void setOutputFormat(int format){
         int size = 0;
         outputFormat = format;
         if (outputFormat!=GPU_UNKNOWN){

@@ -18,9 +18,14 @@
 @property(nonatomic, readonly)BOOL  propsStatus;
 
 // 加载本地道具，不需要带zip后缀
--(BOOL)startProps:(NSString*)propsName;
+-(BOOL)startProps:(NSString*)propsName mirror:(BOOL)mirror;
+
 // 道具本地全路径，需要带zip后缀
--(BOOL)startLocalProps:(NSString*)propsPath;
+-(BOOL)startLocalProps:(NSString*)propsPath mirror:(BOOL)mirror;
+-(void)stopProps;
+// 第二个道具，用于直播中，主播已经有了礼物，观众又送了一个基于人脸的额礼物
+-(BOOL)startLocalProps2:(NSString*)propsPath mirror:(BOOL)mirror;
+-(void)stopProps2;
 
 //// 获取所有的道具列表
 //-(void)propses:(void (^)(NSArray* ))propesBlock;
@@ -33,6 +38,5 @@
 //// 开始道具，如果某个道具本地不存在，返回错误
 // 下载道具包，progress：进度回调, 正常0-100，-1代表下载出错
 //-(void)downloadProps:(NSString*)propsName progress:(void(^)(int percent))progress complete:(void (^)(id error))complete;
--(void)stopProps;
 
 @end
