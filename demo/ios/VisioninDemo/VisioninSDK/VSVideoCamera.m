@@ -27,15 +27,6 @@
 @implementation VSVideoCamera
 //@synthesize camera = camera;
 
-VSVideoCamera* shareInstance = nil;
-+(VSVideoCamera*)shareInstance{
-    if (shareInstance==nil) {
-        shareInstance = [[VSVideoCamera alloc] initWithSessionPreset:AVCaptureSessionPreset640x480 position:AVCaptureDevicePositionFront view:nil];
-    }
-    
-    return shareInstance;
-}
-
 -(id)initWithSessionPreset:(NSString *)sessionPreset position:(AVCaptureDevicePosition)position view:(UIView*)view{
     BOOL asYuv = YES;
     _videoOrientation = -1;
@@ -49,8 +40,6 @@ VSVideoCamera* shareInstance = nil;
     audioProcessingQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_LOW,0);
     sampleProcessingQueue = dispatch_queue_create("com.visionin.sampleProcessingQueue", NULL);
     
-    shareInstance = self;
-
     _captureDevice = nil;
     NSArray *devices = [AVCaptureDevice devicesWithMediaType:AVMediaTypeVideo];
     for (AVCaptureDevice *device in devices)
