@@ -18,7 +18,8 @@ FOUNDATION_EXPORT double VisioninVersionNumber;
 FOUNDATION_EXPORT const unsigned char VisioninVersionString[];
 
 @interface Visionin : NSObject
-+(void)initialize:(NSString*)license;
+// 返回错误情况：1、证书错误；2、资源文件解压失败
++(BOOL)initialize:(NSString*)license;
 @end
 
 #ifdef __cplusplus
