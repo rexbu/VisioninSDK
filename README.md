@@ -2,8 +2,10 @@
 VisioninSDK是一个移动端的跨平台实时视频处理库，提供了视频磨皮美颜、视频滤镜、人脸实时关键点追踪、人脸实时整形（瘦脸、大眼睛等）、人脸动态贴纸等功能的库。
 
 #### _注意：1、在运行demo时候，不要更改ios的bundlid和android的package_
-#### _2、如果想再正式商务合作前接入sdk做效果测试，请将ios工程的bundlid改成和demo一样，然后使用demo的license，安卓把package改成demo一样_
+#### _2、如果需要提前接入sdk做效果测试，请将ios工程的bundlid改成和demo一样，然后使用demo的license，安卓把package改成demo一样_
 #### _3、ios sdk只提供了真机测试的库_
+
+#### _准备开源底层GPU库，跨平台，C++实现，秒杀GPUImage，整理中敬请期待_
 
 # 商务合作：
 
