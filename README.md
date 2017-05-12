@@ -1,7 +1,9 @@
 # 简介
 VisioninSDK是一个移动端的跨平台实时视频处理库，提供了视频磨皮美颜、视频滤镜、人脸实时关键点追踪、人脸实时整形（瘦脸、大眼睛等）、人脸动态贴纸等功能的库。
 
-#### _注意：在运行demo时候，不要更改ios的bundlid和android的package_
+#### _注意：1、在运行demo时候，不要更改ios的bundlid和android的package_
+#### _2、如果想再正式商务合作前接入sdk做效果测试，请将ios工程的bundlid改成和demo一样，然后使用demo的license，安卓把package改成demo一样_
+#### _3、ios sdk只提供了真机测试的库_
 
 # 商务合作：
 
@@ -204,15 +206,25 @@ VisioninSDK支持国际通用的68个关键点的实时追踪，各个坐标序�
 如果不再使用该功能，请及时调用此接口关闭
 
 ___注意: 调用此接口可以停止整形功能，但是不能停止贴纸道具___
+
 ## 3. 使用人脸整形
 ### 3.1 启动
+
 `[[VSFacer shareInstance] startShaper];`
 
 整形依赖人脸关键点追踪，如果没有开启人脸情况启动整形，则会自动开启人脸追踪
 
-目前的人脸整形包括大眼睛和瘦脸，未来会加入更多的整形功能
+### 3.2 调整整形参数
+`[[VSFacer shareInstance] setShapping:xxx strength:xxx];`
 
-### 3.2 关闭整形
+整形强度0-1，目前支持的整形部位有：
+
+* 大眼睛: SHAPER_CMD_EYE
+* 瘦脸：SHAPER_CMD_FACE
+* 瘦下巴：SHAPER_CMD_CHIN
+* 瘦颧骨：SAHPER_CMD_CHEEK
+
+### 3.3 关闭整形
 `[[VSFacer shareInstance] stopShaper];`
 
 如果不再使用该功能，请及时调用此接口关闭
@@ -224,11 +236,22 @@ AR互动道具可以在人脸上叠加各种好玩的道具，包括2D和3D道�
 ### 4.1 设置道具
 设置道具使用VSProps的startProps接口：
 
-`[[VSProps shareInstance] startProps:name]`
+`[[VSProps shareInstance] startLocalProps:propsPath mirror:mirror]`
+
+其中propsPath为道具包在本地的全路径，mirror为表示是否镜像加载
+
+VisioninSDK支持同时添加2个道具，用于主播自己选择了一个道具，此时观众又赠送了一个道具的情况。使用第二个道具的方法：
+
+`[[VSProps shareInstance] startLocalProps2:propsPath mirror:mirror]`
+
 ### 4.2 停止使用道具
 如果停止使用道具，则调用stopProps函数
 
 `[[VSProps shareInstance] stopProps]`
+
+停止第二个道具
+
+`[[VSProps shareInstance] stopProps2]`
 
 ___注意: 调用此接口不能停止人脸追踪和整形，要停止人脸追踪必须显示的调用stopFaceTracking接口___
 
