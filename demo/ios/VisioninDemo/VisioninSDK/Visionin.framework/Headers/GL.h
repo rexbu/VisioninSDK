@@ -66,6 +66,20 @@ typedef struct gpu_point_t{
     float y;
 }gpu_point_t;
 
+typedef struct gpu_colori_t{
+    unsigned char r;
+    unsigned char g;
+    unsigned char b;
+    unsigned char a;
+}gpu_colori_t;
+
+typedef struct gpu_colorf_t{
+    float r;
+    float g;
+    float b;
+    float a;
+}gpu_colorf_t;
+
 typedef struct gpu_rect_t{
     gpu_point_t pointer;
     struct {

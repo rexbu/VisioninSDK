@@ -76,15 +76,18 @@
 // 设置背景图
 -(void)setBackground:(UIImage*)image;
 -(void)removeBackground;
-// 为preview叠加图片，例如添加logo, rect是归一化坐标，范围0-1
--(void)setPreviewBlend:(UIImage*)image rect:(CGRect)rect;
+
+// 为preview叠加图片，例如添加logo, rect是归一化坐标，范围0-1.
+// 注意mirror仅仅表示图片镜像，实际显示的位置会受到mirrorFrontPreview和mirrorBackPreview的影响
+-(void)setPreviewBlend:(UIImage*)image rect:(CGRect)rect mirror:(BOOL)mirror;
 // 为preview叠加图片，指定宽和高， RGBA格式
--(void)setPreviewBlend:(unsigned char*)bytes width:(int)w height:(int)h rect:(CGRect)rect;
+// 注意mirror仅仅表示图片镜像，实际显示的位置会受到mirrorFrontPreview和mirrorBackPreview的影响
+-(void)setPreviewBlend:(unsigned char*)bytes width:(int)w height:(int)h rect:(CGRect)rect  mirror:(BOOL)mirror;
 -(void)removePreviewBlend;
 // 为视频流叠加图片, rect是归一化坐标，范围0-1
--(void)setVideoBlend:(UIImage*)image rect:(CGRect)rect;
+-(void)setVideoBlend:(UIImage*)image rect:(CGRect)rect mirror:(BOOL)mirror;
 // 为视频流叠加图片，指定宽和高，RGBA格式
--(void)setVideoBlend:(unsigned char*)bytes width:(int)w height:(int)h rect:(CGRect)rect;
+-(void)setVideoBlend:(unsigned char*)bytes width:(int)w height:(int)h rect:(CGRect)rect mirror:(BOOL)mirror;
 -(void)removeVideoBlend;
 @end
 
