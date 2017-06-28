@@ -70,31 +70,40 @@ BOOL canRotateToAllOrientations;
     // 加载贴纸
     NSString* props = [[NSBundle mainBundle] pathForResource:@"cat" ofType:@"zip"];
     [[VSProps shareInstance] startLocalProps:props mirror:true];
+    // 贴纸执行完一轮后的回调
+    [[VSProps shareInstance] setPropsLoadBlock:^{
+        NSLog(@"Load Success!");
+    }];
     
-    //    __block typeof(self) parent = self;
-    //    [videoCamera setBgraPixelBlock:^(CVPixelBufferRef pixelBuffer, CMTime time) {
-    //        // 获取处理后视频帧
-    //        // NSLog(@"size: %d/%d", CVPixelBufferGetWidth(pixelBuffer), CVPixelBufferGetHeight(pixelBuffer));
-    //        // 视频流预览
-    //        if (parent->videoView!=nil) {
-    //            // 此处对性能影响比较大，如果不用测试视频流是否正确，可以把以下代码关闭
-    //            UIImage* image = pixelBuffer2Image(pixelBuffer);
-    //            dispatch_async(dispatch_get_main_queue(), ^(){
-    //                [parent->videoView setImage:image];
-    //            });
-    //        }
-    //    }];
-    
-    // 以下是查看nv12格式的视频流
-    //    [videoCamera setYuv420pPixelBlock:^(unsigned char * buffer, CMTime time) {
-    //        if (parent->videoView!=nil && buffer!=NULL) {
-    //            UIImage* image = yuv420Buffer2Image(buffer, 480, 640);
-    //            dispatch_async(dispatch_get_main_queue(), ^(){
-    //                [parent->videoView setImage:image];
-    //            });
-    //        }
-    //    }];
-    
+    /* 以下为添加水印的代码
+    UIImage* logo = [UIImage imageNamed:@"watermark_logo.png"];
+    [videoCamera setPreviewBlend:logo rect:CGRectMake(0.65, 0.1, 0.3, 0.08) mirror:YES];
+     */
+    /* 以下为获取处理后bgra格式视频流代码
+        __block typeof(self) parent = self;
+        [videoCamera setBgraPixelBlock:^(CVPixelBufferRef pixelBuffer, CMTime time) {
+            // 获取处理后视频帧
+            // NSLog(@"size: %d/%d", CVPixelBufferGetWidth(pixelBuffer), CVPixelBufferGetHeight(pixelBuffer));
+            // 视频流预览
+            if (parent->videoView!=nil) {
+                // 此处对性能影响比较大，如果不用测试视频流是否正确，可以把以下代码关闭
+                UIImage* image = pixelBuffer2Image(pixelBuffer);
+                dispatch_async(dispatch_get_main_queue(), ^(){
+                    [parent->videoView setImage:image];
+                });
+            }
+        }];
+    */
+        /* 以下是查看处理后的nv12格式的视频流代码
+        [videoCamera setYuv420pPixelBlock:^(unsigned char * buffer, CMTime time) {
+            if (parent->videoView!=nil && buffer!=NULL) {
+                UIImage* image = yuv420Buffer2Image(buffer, 480, 640);
+                dispatch_async(dispatch_get_main_queue(), ^(){
+                    [parent->videoView setImage:image];
+                });
+            }
+        }];
+        */
 }
 
 - (void)initView{

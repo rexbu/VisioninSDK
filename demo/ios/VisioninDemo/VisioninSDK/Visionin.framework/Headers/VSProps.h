@@ -16,6 +16,10 @@
 
 @property(nonatomic, weak)NSString* currentProps;
 @property(nonatomic, readonly)BOOL  propsStatus;
+// 第一个道具加载完一轮后的回调，不能做耗时的操作
+@property(nonatomic, copy)void (^propsLoadBlock)();
+// 第二个道具加载完一轮后的回调，不能做耗时的操作
+@property(nonatomic, copy)void (^propsLoadBlock2)();
 
 // 加载本地道具，不需要带zip后缀
 -(BOOL)startProps:(NSString*)propsName mirror:(BOOL)mirror;

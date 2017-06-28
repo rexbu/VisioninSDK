@@ -106,6 +106,7 @@ public:
         m_root = cJSON_CreateObject();
     }
     
+    std::vector<std::string> keys();
 };
 
 class JSONArray: public JSON{
