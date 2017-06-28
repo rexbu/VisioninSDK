@@ -26,7 +26,7 @@ VisioninSDK是一个移动端的跨平台实时视频处理库，提供了视频
 
 `` [Visionin initialize:@"xxx"];`` 
 
-- 其中xxx为应用的证书，应用证书的获取请联系 QQ 80017290
+- 其中xxx为应用的证书，应用证书的获取到开发者平台注册应用: develop.me-yun.com
 
 #### 首先，新建VSVideoFrame对象
 
