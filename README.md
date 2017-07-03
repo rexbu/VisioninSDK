@@ -4,7 +4,6 @@ VisioninSDK是一个移动端的跨平台实时视频处理库，提供了视频
 #### _注意：1、在运行demo时候，不要更改ios的bundlid和android的package_
 #### _2、如果需要提前接入sdk做效果测试，请将ios工程的bundlid改成和demo一样，然后使用demo的license，安卓把package改成demo一样_
 #### _3、ios sdk只提供了真机测试的库_
-#### _开发者平台：develop.me-yun.com_
 
 # 商务合作：
 
@@ -26,7 +25,7 @@ VisioninSDK是一个移动端的跨平台实时视频处理库，提供了视频
 
 `` [Visionin initialize:@"xxx"];`` 
 
-- 其中xxx为应用的证书，应用证书的获取到开发者平台注册应用: develop.me-yun.com
+- 其中xxx为应用的证书，应用证书的获取请联系QQ: 80017290
 
 #### 首先，新建VSVideoFrame对象
 

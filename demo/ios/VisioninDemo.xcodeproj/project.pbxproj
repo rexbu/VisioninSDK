@@ -219,7 +219,7 @@
 				TargetAttributes = {
 					C8ED52CD1E5C30BA00796B4E = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = 7C42L52533;
+						DevelopmentTeam = TWA5QS8JFT;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -389,7 +389,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 7C42L52533;
+				DEVELOPMENT_TEAM = TWA5QS8JFT;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -411,7 +411,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 7C42L52533;
+				DEVELOPMENT_TEAM = TWA5QS8JFT;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
