@@ -37,6 +37,7 @@
 		C8ED533F1E5C32B000796B4E /* facer.model in Resources */ = {isa = PBXBuildFile; fileRef = C8ED533D1E5C32B000796B4E /* facer.model */; };
 		C8ED53401E5C32B000796B4E /* visionin.res in Resources */ = {isa = PBXBuildFile; fileRef = C8ED533E1E5C32B000796B4E /* visionin.res */; };
 		C8F192181E8EAED300A6D552 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C8F192161E8EAED300A6D552 /* HomeViewController.m */; };
+		C8F301A71F17246D0011AFA6 /* maoliao.zip in Resources */ = {isa = PBXBuildFile; fileRef = C8F301A61F17246D0011AFA6 /* maoliao.zip */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -87,6 +88,7 @@
 		C8F192161E8EAED300A6D552 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 		C8F192171E8EAED300A6D552 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
 		C8F192191E8EAF5B00A6D552 /* VSVideoCamera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSVideoCamera.h; path = VisioninSDK/VSVideoCamera.h; sourceTree = "<group>"; };
+		C8F301A61F17246D0011AFA6 /* maoliao.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = maoliao.zip; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +139,7 @@
 		C8ED52D01E5C30BA00796B4E /* VisioninDemo */ = {
 			isa = PBXGroup;
 			children = (
+				C8F301A61F17246D0011AFA6 /* maoliao.zip */,
 				C8ED52D41E5C30BA00796B4E /* AppDelegate.h */,
 				C8ED52D51E5C30BA00796B4E /* AppDelegate.m */,
 				C8ED52DD1E5C30BA00796B4E /* Assets.xcassets */,
@@ -253,6 +256,7 @@
 				C8ED52DE1E5C30BA00796B4E /* Assets.xcassets in Resources */,
 				C8ED53401E5C32B000796B4E /* visionin.res in Resources */,
 				C8ED52DC1E5C30BA00796B4E /* Main.storyboard in Resources */,
+				C8F301A71F17246D0011AFA6 /* maoliao.zip in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
