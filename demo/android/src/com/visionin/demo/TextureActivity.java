@@ -56,8 +56,8 @@ public class TextureActivity extends Activity implements SurfaceHolder.Callback{
 
         // 拷贝需要的道具文件及logo
         try {
-            InputStream is = this.getResources().getAssets().open("cat.zip");
-            OutputStream os = FileUtil.fileOutputStream("/data/data/"+ DeviceUtil.getPackageName(this) +"/cat.zip");
+            InputStream is = this.getResources().getAssets().open("TY.zip");
+            OutputStream os = FileUtil.fileOutputStream("/data/data/"+ DeviceUtil.getPackageName(this) +"/TY.zip");
             FileUtil.write(os, is);
 
             is = this.getResources().getAssets().open("rabbit.zip");
@@ -138,14 +138,14 @@ public class TextureActivity extends Activity implements SurfaceHolder.Callback{
         VSFacer.startShaper();
 
         /// 设置道具，加载2个道具
-        boolean st = VSProps.startProps("/data/data/" + DeviceUtil.getPackageName(this) + "/cat.zip", false);
+        boolean st = VSProps.startProps("/data/data/" + DeviceUtil.getPackageName(this) + "/TY.zip", false);
         if (!st){
             Log.e("Visionin", "Set Props Error!");
         }
-        st = VSProps.startProps2("/data/data/" + DeviceUtil.getPackageName(this) + "/rabbit.zip", false);
-        if (!st){
-            Log.e("Visionin", "Set Props Error!");
-        }
+//        st = VSProps.startProps2("/data/data/" + DeviceUtil.getPackageName(this) + "/rabbit.zip", false);
+//        if (!st){
+//            Log.e("Visionin", "Set Props Error!");
+//        }
 
         // 设置logo
         videoFrame.setPreviewBlend("/data/data/"+ DeviceUtil.getPackageName(this) +"/logo.png", 0.8f, 0.1f, 0.1f, 0.1f);
@@ -246,7 +246,7 @@ public class TextureActivity extends Activity implements SurfaceHolder.Callback{
                     isProps = false;
                 }
                 else{
-                    VSProps.startProps("/data/data/" + DeviceUtil.getPackageName(TextureActivity.this) + "/cat.zip", false);
+                    VSProps.startProps("/data/data/" + DeviceUtil.getPackageName(TextureActivity.this) + "/TY.zip", false);
                     isProps = true;
                 }
             }

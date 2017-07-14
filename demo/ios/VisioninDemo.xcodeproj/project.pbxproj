@@ -13,6 +13,7 @@
 		C8072BCF1E6D530E00847EA8 /* MoCross.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C8072BCA1E6D52FB00847EA8 /* MoCross.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C8072BD01E6D530E00847EA8 /* Visionin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8072BCB1E6D52FB00847EA8 /* Visionin.framework */; };
 		C8072BD11E6D530E00847EA8 /* Visionin.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C8072BCB1E6D52FB00847EA8 /* Visionin.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		C83A23A01F18735B0052BCCE /* TY.zip in Resources */ = {isa = PBXBuildFile; fileRef = C83A239F1F18735B0052BCCE /* TY.zip */; };
 		C84B840E1E6EC7A000FAE377 /* cat.zip in Resources */ = {isa = PBXBuildFile; fileRef = C84B840D1E6EC7A000FAE377 /* cat.zip */; };
 		C8ED52D31E5C30BA00796B4E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C8ED52D21E5C30BA00796B4E /* main.m */; };
 		C8ED52D61E5C30BA00796B4E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C8ED52D51E5C30BA00796B4E /* AppDelegate.m */; };
@@ -58,6 +59,7 @@
 /* Begin PBXFileReference section */
 		C8072BCA1E6D52FB00847EA8 /* MoCross.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MoCross.framework; path = VisioninDemo/VisioninSDK/MoCross.framework; sourceTree = "<group>"; };
 		C8072BCB1E6D52FB00847EA8 /* Visionin.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Visionin.framework; path = VisioninDemo/VisioninSDK/Visionin.framework; sourceTree = "<group>"; };
+		C83A239F1F18735B0052BCCE /* TY.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = TY.zip; sourceTree = "<group>"; };
 		C84B840D1E6EC7A000FAE377 /* cat.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = cat.zip; sourceTree = "<group>"; };
 		C8ED52CE1E5C30BA00796B4E /* VisioninDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VisioninDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8ED52D21E5C30BA00796B4E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -139,6 +141,7 @@
 		C8ED52D01E5C30BA00796B4E /* VisioninDemo */ = {
 			isa = PBXGroup;
 			children = (
+				C83A239F1F18735B0052BCCE /* TY.zip */,
 				C8F301A61F17246D0011AFA6 /* maoliao.zip */,
 				C8ED52D41E5C30BA00796B4E /* AppDelegate.h */,
 				C8ED52D51E5C30BA00796B4E /* AppDelegate.m */,
@@ -254,6 +257,7 @@
 				C8ED52E11E5C30BA00796B4E /* LaunchScreen.storyboard in Resources */,
 				C8ED533F1E5C32B000796B4E /* facer.model in Resources */,
 				C8ED52DE1E5C30BA00796B4E /* Assets.xcassets in Resources */,
+				C83A23A01F18735B0052BCCE /* TY.zip in Resources */,
 				C8ED53401E5C32B000796B4E /* visionin.res in Resources */,
 				C8ED52DC1E5C30BA00796B4E /* Main.storyboard in Resources */,
 				C8F301A71F17246D0011AFA6 /* maoliao.zip in Resources */,

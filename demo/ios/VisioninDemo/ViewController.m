@@ -70,7 +70,7 @@ BOOL canRotateToAllOrientations;
     // [facer startShaper];
     
     // 加载第一个贴纸
-    NSString* props = [[NSBundle mainBundle] pathForResource:@"maoliao" ofType:@"zip"];
+    NSString* props = [[NSBundle mainBundle] pathForResource:@"TY" ofType:@"zip"];
     [[VSProps shareInstance] startLocalProps:props mirror:false];
     [[VSProps shareInstance] setPropsLoadBlock:^{
         NSLog(@"Load Success!");
