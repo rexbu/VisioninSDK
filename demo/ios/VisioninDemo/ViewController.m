@@ -90,7 +90,6 @@ BOOL canRotateToAllOrientations;
         __block typeof(self) parent = self;
         [videoCamera setBgraPixelBlock:^(CVPixelBufferRef pixelBuffer, CMTime time) {
             // 获取处理后视频帧
-            NSLog(@"size: %d/%d", CVPixelBufferGetWidth(pixelBuffer), CVPixelBufferGetHeight(pixelBuffer));
             // 视频流预览
 //            if (parent->videoView!=nil) {
 //                // 此处对性能影响比较大，如果不用测试视频流是否正确，可以把以下代码关闭
