@@ -69,13 +69,13 @@ public class BytesActivity extends Activity implements Camera.PreviewCallback{
         initView();
 
         // 摄像头
-        videoSize = CameraUtil.openCamera(1280, 720, isFront);
+        videoSize = CameraUtil.openCamera(640, 480, isFront);
         CameraUtil.mCamera.setPreviewCallback(this);
         CameraUtil.mCamera.startPreview();
 
         // VSVideoFrame
         try {
-            videoFrame = new VSVideoFrame(null);
+            videoFrame = new VSVideoFrame(true);
         } catch (Exception e) {
             e.printStackTrace();
             return;
@@ -94,9 +94,9 @@ public class BytesActivity extends Activity implements Camera.PreviewCallback{
         //设置预览镜像，true时预览为镜像（正常画面），false时为非镜像(左右颠倒)
         videoFrame.setMirrorFrontPreview(true);
         //设置推流视频镜像
-        videoFrame.setMirrorBackVideo(false);
+        videoFrame.setMirrorBackVideo(true);
         //设置预览镜像，true时预览为镜像（左右颠倒），false时为非镜像(正常画面)
-        videoFrame.setMirrorBackPreview(false);
+        videoFrame.setMirrorBackPreview(true);
         videoFrame.setOutputSize(360, 640);
         videoFrame.setVideoSize(videoSize.width, videoSize.height);
 
@@ -117,17 +117,19 @@ public class BytesActivity extends Activity implements Camera.PreviewCallback{
 
     @Override
     protected void onPause() {
-//        if (videoFrame!=null){
-//            videoFrame.stop();
-//        }
-//        com.rex.utils.CameraUtil.releaseCamera();
-//        videoFrame.stop();
-//        VSFacer.destroyFacer();
-//        VSProps.destroyProps();
-//        videoFrame.destroy();
-//        videoFrame = null;
-//
-//        super.onPause();
+        super.onPause();
+
+        if (videoFrame!=null){
+            videoFrame.stop();
+        }
+
+        VSProps.destroyProps();
+        VSFacer.destroyFacer();
+        videoFrame.destroy();
+
+        CameraUtil.mCamera.stopPreview();
+        // CameraUtil.mCamera.release();
+        CameraUtil.mCamera = null;
     }
 
     @Override

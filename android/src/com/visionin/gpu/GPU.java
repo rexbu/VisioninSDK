@@ -46,8 +46,8 @@ public class GPU {
         NativeLoad.registJNIMethod(so, "com/visionin/gpu/GPU", "setOutputView", "()V");
         NativeLoad.registJNIMethod(so, "com/visionin/gpu/GPU", "removeOutputView", "()V");
 
-        NativeLoad.registJNIMethod(so, "com/visionin/gpu/GPU", "setPreviewBlend", "(Ljava/lang/String;FFFF)V");
-        NativeLoad.registJNIMethod(so, "com/visionin/gpu/GPU", "setVideoBlend", "(Ljava/lang/String;FFFF)V");
+        NativeLoad.registJNIMethod(so, "com/visionin/gpu/GPU", "setPreviewBlend", "(Ljava/lang/String;FFFFZ)V");
+        NativeLoad.registJNIMethod(so, "com/visionin/gpu/GPU", "setVideoBlend", "(Ljava/lang/String;FFFFZ)V");
 	}
 
     // processTexture函数要处理的texture类型，如果是surfaceTexture，则应该为OES类型
@@ -102,8 +102,9 @@ public class GPU {
      * @param y     叠加位置左上角y坐标，归一化坐标，0-1
      * @param w     叠加图片宽度，归一化坐标，0-1
      * @param h     叠加图片高度，归一化坐标，0-1
+     * @param mirror 是否镜像
      */
-    public native void setPreviewBlend(String path, float x, float y, float w, float h);
+    public native void setPreviewBlend(String path, float x, float y, float w, float h, boolean mirror);
     /**
      * 视频流添加叠加渲染图片，可用于logo，仅用于视频流，不会在预览窗口中生效
      * @param path  图片路径
@@ -111,13 +112,14 @@ public class GPU {
      * @param y     叠加位置左上角y坐标，归一化坐标，0-1
      * @param w     叠加图片宽度，归一化坐标，0-1
      * @param h     叠加图片高度，归一化坐标，0-1
+     * @param mirror 是否镜像
      */
-    public native void setVideoBlend(String path, float x, float y, float w, float h);
+    public native void setVideoBlend(String path, float x, float y, float w, float h, boolean mirror);
     public void removePreviewBlend(){
-        setPreviewBlend(null, 0, 0, 0, 0);
+        setPreviewBlend(null, 0, 0, 0, 0, false);
     }
     public void removeVideoBlend(){
-        setVideoBlend(null, 0, 0, 0, 0);
+        setVideoBlend(null, 0, 0, 0, 0, false);
     }
 
     protected long  mEGLContext = 0;

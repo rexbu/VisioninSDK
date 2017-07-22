@@ -1,0 +1,112 @@
+ECLIPSE ANDROID PROJECT IMPORT SUMMARY
+======================================
+
+Ignored Files:
+--------------
+The following files were *not* copied into the new Gradle project; you
+should evaluate whether these are still needed in your project and if
+so manually move them:
+
+* .DS_Store
+* .idea/
+* .idea/.name
+* .idea/compiler.xml
+* .idea/copyright/
+* .idea/copyright/profiles_settings.xml
+* .idea/misc.xml
+* .idea/modules.xml
+* .idea/uiDesigner.xml
+* .idea/vcs.xml
+* .idea/workspace.xml
+* VisioninDemo.iml
+* android.iml
+* ant.properties
+* build.xml
+* face_points.jpeg
+* out/
+* out/production/
+* out/production/android/
+* out/production/android/android.apk
+* out/production/android/android.unaligned.apk
+* out/production/android/com/
+* out/production/android/com/rex/
+* out/production/android/com/rex/load/
+* out/production/android/com/rex/load/NativeLoad.class
+* out/production/android/com/rex/utils/
+* out/production/android/com/rex/utils/ApkUtil.class
+* out/production/android/com/rex/utils/CameraUtil.class
+* out/production/android/com/rex/utils/DeviceUtil.class
+* out/production/android/com/rex/utils/FileUtil.class
+* out/production/android/com/rex/utils/HttpUtil.class
+* out/production/android/com/rex/utils/IOCallback.class
+* out/production/android/com/rex/utils/LogUtil.class
+* out/production/android/com/rex/utils/ManifestUtil.class
+* out/production/android/com/rex/utils/TimerIOCallback$1.class
+* out/production/android/com/rex/utils/TimerIOCallback.class
+* out/production/android/com/visionin/
+* out/production/android/com/visionin/Visionin.class
+* out/production/android/com/visionin/core/
+* out/production/android/com/visionin/core/VSFacer.class
+* out/production/android/com/visionin/core/VSProps.class
+* out/production/android/com/visionin/core/VSRawBytesCallback.class
+* out/production/android/com/visionin/core/VSVideoFrame.class
+* out/production/android/com/visionin/demo/
+* out/production/android/com/visionin/demo/BuildConfig.class
+* out/production/android/com/visionin/demo/BytesActivity$1.class
+* out/production/android/com/visionin/demo/BytesActivity$2.class
+* out/production/android/com/visionin/demo/BytesActivity$3.class
+* out/production/android/com/visionin/demo/BytesActivity$4.class
+* out/production/android/com/visionin/demo/BytesActivity$5.class
+* out/production/android/com/visionin/demo/BytesActivity$6.class
+* out/production/android/com/visionin/demo/BytesActivity.class
+* out/production/android/com/visionin/demo/MainActivity$1.class
+* out/production/android/com/visionin/demo/MainActivity$2.class
+* out/production/android/com/visionin/demo/MainActivity.class
+* out/production/android/com/visionin/demo/R$array.class
+* out/production/android/com/visionin/demo/R$attr.class
+* out/production/android/com/visionin/demo/R$drawable.class
+* out/production/android/com/visionin/demo/R$id.class
+* out/production/android/com/visionin/demo/R$layout.class
+* out/production/android/com/visionin/demo/R$string.class
+* out/production/android/com/visionin/demo/R.class
+* out/production/android/com/visionin/demo/TextureActivity$1.class
+* out/production/android/com/visionin/demo/TextureActivity$2.class
+* out/production/android/com/visionin/demo/TextureActivity$3.class
+* out/production/android/com/visionin/demo/TextureActivity$4.class
+* out/production/android/com/visionin/demo/TextureActivity$5.class
+* out/production/android/com/visionin/demo/TextureActivity$6.class
+* out/production/android/com/visionin/demo/TextureActivity$7.class
+* out/production/android/com/visionin/demo/TextureActivity.class
+* out/production/android/com/visionin/gpu/
+* out/production/android/com/visionin/gpu/GPU.class
+* out/production/android/com/visionin/gpu/GPUFilter.class
+* proguard-project.txt
+
+Moved Files:
+------------
+Android Gradle projects use a different directory structure than ADT
+Eclipse projects. Here's how the projects were restructured:
+
+* AndroidManifest.xml => app/src/main/AndroidManifest.xml
+* assets/ => app/src/main/assets/
+* libs/armeabi-v7a/libnative.so => app/src/main/jniLibs/armeabi-v7a/libnative.so
+* libs/armeabi-v7a/libvisionin.so => app/src/main/jniLibs/armeabi-v7a/libvisionin.so
+* libs/armeabi-v7a/libzr.so => app/src/main/jniLibs/armeabi-v7a/libzr.so
+* res/ => app/src/main/res/
+* src/ => app/src/main/java/
+* src/.DS_Store => app/src/main/resources/.DS_Store
+
+Next Steps:
+-----------
+You can now build the project. The Gradle project needs network
+connectivity to download dependencies.
+
+Bugs:
+-----
+If for some reason your project does not build, and you determine that
+it is due to a bug or limitation of the Eclipse to Gradle importer,
+please file a bug at http://b.android.com with category
+Component-Tools.
+
+(This import summary is for your information only, and can be deleted
+after import once you are satisfied with the results.)

@@ -3,7 +3,9 @@ package com.visionin.demo;
 import android.app.Activity;
 import android.content.res.Configuration;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.hardware.Camera;
+import android.media.Image;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.SurfaceHolder;
@@ -43,6 +45,7 @@ public class TextureActivity extends Activity implements SurfaceHolder.Callback{
     protected Spinner filterSpinner;
     protected TextView smoothText;
     protected SeekBar smoothValueSeek;
+    protected SeekBar shaperValueSeek;
     protected boolean isProps = true;
     protected boolean isShaper = true;
 
@@ -51,9 +54,18 @@ public class TextureActivity extends Activity implements SurfaceHolder.Callback{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_texture);
 
+        // 拷贝需要的道具文件及logo
         try {
-            InputStream is = this.getResources().getAssets().open("cat.zip");
-            OutputStream os = FileUtil.fileOutputStream("/data/data/"+ DeviceUtil.getPackageName(this) +"/cat.zip");
+            InputStream is = this.getResources().getAssets().open("TY.zip");
+            OutputStream os = FileUtil.fileOutputStream("/data/data/"+ DeviceUtil.getPackageName(this) +"/TY.zip");
+            FileUtil.write(os, is);
+
+            is = this.getResources().getAssets().open("rabbit.zip");
+            os = FileUtil.fileOutputStream("/data/data/"+ DeviceUtil.getPackageName(this) +"/rabbit.zip");
+            FileUtil.write(os, is);
+
+            is = this.getResources().getAssets().open("logo.png");
+            os = FileUtil.fileOutputStream("/data/data/"+ DeviceUtil.getPackageName(this) +"/logo.png");
             FileUtil.write(os, is);
         } catch (IOException e) {
             e.printStackTrace();
@@ -61,7 +73,7 @@ public class TextureActivity extends Activity implements SurfaceHolder.Callback{
 
         surfaceView = (SurfaceView) findViewById(R.id.camera_surfaceView);
         surfaceHolder = surfaceView.getHolder();
-        // imageView = (ImageView)findViewById(R.id.cmaera_iamgeView);
+        imageView = (ImageView)findViewById(R.id.cmaera_iamgeView);
 
         isFront = true;
         initView();
@@ -76,10 +88,6 @@ public class TextureActivity extends Activity implements SurfaceHolder.Callback{
 
     @Override
     protected void onPause() {
-        if (videoFrame!=null){
-            videoFrame.stop();
-        }
-        com.rex.utils.CameraUtil.releaseCamera();
         super.onPause();
     }
 
@@ -101,13 +109,13 @@ public class TextureActivity extends Activity implements SurfaceHolder.Callback{
 
         videoFrame.setOutputImageOritation(Configuration.ORIENTATION_PORTRAIT);
         //设置推流视频镜像
-        videoFrame.setMirrorFrontVideo(true);
+        videoFrame.setMirrorFrontVideo(false);
         //设置预览镜像，true时预览为镜像（正常画面），false时为非镜像(左右颠倒)
         videoFrame.setMirrorFrontPreview(true);
         //设置推流视频镜像
         videoFrame.setMirrorBackVideo(false);
         //设置预览镜像，true时预览为镜像（左右颠倒），false时为非镜像(正常画面)
-        videoFrame.setMirrorBackPreview(false);
+        videoFrame.setMirrorBackPreview(true);
         videoFrame.setOutputSize(360, 640);
         videoFrame.setVideoSize(videoSize.width, videoSize.height);
 
@@ -115,19 +123,32 @@ public class TextureActivity extends Activity implements SurfaceHolder.Callback{
         videoFrame.setYuv420PCallback(new VSRawBytesCallback() {
             @Override
             public void outputBytes(byte[] bytes) {
-                // 获取人脸坐标点，偶数为x坐标，奇数为y坐标
-                float[] point = VSFacer.getFacerMarks(0);
-                if (point!=null){
-                    //Log.e("Facer", "face第一个点  x:"+point[0]+" y:"+point[1]);
+                // 表情
+                if (VSFacer.emotion(VSFacer.VS_EMOTION_OPEN_MOUTH, 0)){
+                    Log.e("Emotion", "OpenMouth!!!");
                 }
-                //imageView.setImageBitmap(yuv420p2RGBABitmap(bytes, 360, 640));
+                imageView.setImageBitmap(yuv420p2RGBABitmap(bytes, 360, 640));
             }
         });
 
+        // 开启人脸及整形
         VSFacer.initialize(this);
         VSFacer.startFacerTracking();
         VSFacer.startShaper();
-        VSProps.startProps("/data/data/" + DeviceUtil.getPackageName(this) + "/cat.zip", false);
+
+        /// 设置道具，加载2个道具
+        boolean st = VSProps.startProps("/data/data/" + DeviceUtil.getPackageName(this) + "/TY.zip", false);
+        if (!st){
+            Log.e("Visionin", "Set Props Error!");
+        }
+//        st = VSProps.startProps2("/data/data/" + DeviceUtil.getPackageName(this) + "/rabbit.zip", false);
+//        if (!st){
+//            Log.e("Visionin", "Set Props Error!");
+//        }
+
+        // 设置logo
+        videoFrame.setPreviewBlend("/data/data/"+ DeviceUtil.getPackageName(this) +"/logo.png", 0.8f, 0.1f, 0.1f, 0.1f, false);
+        videoFrame.setVideoBlend("/data/data/"+ DeviceUtil.getPackageName(this) +"/logo.png", 0.8f, 0.5f, 0.1f, 0.1f, false);
         videoFrame.start();
         try {
             com.rex.utils.CameraUtil.mCamera.setPreviewTexture(videoFrame.surfaceTexture());
@@ -139,15 +160,24 @@ public class TextureActivity extends Activity implements SurfaceHolder.Callback{
 
     @Override
     public void surfaceChanged(SurfaceHolder surfaceHolder, int i, int i1, int i2) {
-
+        Configuration configuration = this.getResources().getConfiguration(); //获取设置的配置信息
+        if (configuration.orientation==Configuration.ORIENTATION_LANDSCAPE){
+            videoFrame.setOutputImageOritation(Configuration.ORIENTATION_LANDSCAPE);
+        }
+        else{
+            videoFrame.setOutputImageOritation(Configuration.ORIENTATION_PORTRAIT);
+        }
     }
 
     @Override
     public void surfaceDestroyed(SurfaceHolder surfaceHolder) {
-        videoFrame.stop();
-        VSFacer.destroyFacer();
+        if (videoFrame!=null){
+            videoFrame.stop();
+        }
         VSProps.destroyProps();
+        VSFacer.destroyFacer();
         videoFrame.destroy();
+        com.rex.utils.CameraUtil.releaseCamera();
         videoFrame = null;
     }
 
@@ -182,6 +212,7 @@ public class TextureActivity extends Activity implements SurfaceHolder.Callback{
         smoothValueSeek = (SeekBar)findViewById(R.id.smoothValueBar);
         smoothText.setText("磨皮：0.9");
         smoothValueSeek.setProgress(90);
+        shaperValueSeek = (SeekBar)findViewById(R.id.shaperValueBar);
 
         swtichButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -189,19 +220,23 @@ public class TextureActivity extends Activity implements SurfaceHolder.Callback{
                 rotateCamera();
             }
         });
+
         shaperButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if (isShaper){
+                    shaperButton.setText("开整形");
                     VSFacer.stopShaper();
                     isShaper = false;
                 }
                 else{
+                    shaperButton.setText("关整形");
                     VSFacer.startShaper();
                     isShaper = true;
                 }
             }
         });
+
         propsButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -210,7 +245,7 @@ public class TextureActivity extends Activity implements SurfaceHolder.Callback{
                     isProps = false;
                 }
                 else{
-                    VSProps.startProps("/data/data/" + DeviceUtil.getPackageName(TextureActivity.this) + "/cat.zip", false);
+                    VSProps.startProps("/data/data/" + DeviceUtil.getPackageName(TextureActivity.this) + "/TY.zip", false);
                     isProps = true;
                 }
             }
@@ -220,7 +255,8 @@ public class TextureActivity extends Activity implements SurfaceHolder.Callback{
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 if (videoFrame!=null){
-                    videoFrame.setExtraFilter(getResources().getStringArray(R.array.filter_name)[i]);
+                    String filter = getResources().getStringArray(R.array.filter_name)[i];
+                    videoFrame.setExtraFilter(filter);
                 }
             }
 
@@ -247,6 +283,29 @@ public class TextureActivity extends Activity implements SurfaceHolder.Callback{
                     float strength = value*(float)1.0/100;
                     videoFrame.setSmoothStrength(strength);
                     smoothText.setText("磨皮："+ strength);
+                }
+            }
+        });
+        shaperValueSeek.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            public int value;
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
+                value = i;
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+                if (videoFrame!=null){
+                    float strength = value*(float)1.0/100;
+                    VSFacer.setShapping(VSFacer.SHAPER_CMD_EYE, strength);
+                    VSFacer.setShapping(VSFacer.SHAPER_CMD_FACE, strength);
+                    VSFacer.setShapping(VSFacer.SHAPER_CMD_CHIN, strength);
+                    VSFacer.setShapping(VSFacer.SAHPER_CMD_CHEEK, strength);
                 }
             }
         });

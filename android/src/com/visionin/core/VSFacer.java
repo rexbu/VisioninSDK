@@ -32,6 +32,7 @@ public class VSFacer {
         NativeLoad.registJNIMethod(so, "com/visionin/core/VSFacer", "startShaper", "()V");
         NativeLoad.registJNIMethod(so, "com/visionin/core/VSFacer", "stopShaper", "()V");
         NativeLoad.registJNIMethod(so, "com/visionin/core/VSFacer", "setShapping", "(IF)V");
+        NativeLoad.registJNIMethod(so, "com/visionin/core/VSFacer", "emotion", "(II)Z");
 //
 //        NativeLoad.registJNIMethod(so, "com/visionin/core/VSFacer", "setMarker", "(Z)V");
 //        NativeLoad.registJNIMethod(so, "com/visionin/core/VSFacer", "getFacerMarks", "()[F");
@@ -110,6 +111,14 @@ public class VSFacer {
      */
     public static native void setShapping(int cmd, float strength);
 
+    /**
+     * 表情检测
+     * @param cmd 表情命令
+     * @param index 第几个人
+     * @return
+     */
+    public static native boolean emotion(int cmd, int index);
+
     // 人脸追踪需要调整的角度
     public static final int FACER_CLOCKWISE_0 = 0;
     public static final int FACER_CLOCKWISE_90 = 1;
@@ -127,4 +136,11 @@ public class VSFacer {
 //
 //    public native void setMarker(boolean flag);
 //    public native float[] getFacerMarks();
+
+    // 表情
+    public static final int VS_EMOTION_BLINK_EYE = 0x00000002;  // 眨眼
+    public static final int VS_EMOTION_OPEN_MOUTH = 0x00000004; // 张嘴
+    public static final int VS_EMOTION_YAW_HEAD = 0x00000008;   // 摇头
+    public static final int VS_EMOTION_PITCH_HEAD = 0x00000010; // 点头
+    public static final int VS_EMOTION_JUMP_BROW = 0x00000020;  // 挑眉
 }

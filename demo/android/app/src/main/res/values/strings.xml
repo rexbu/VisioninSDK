@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">VisionDemo</string>
+    <string-array name="filter_name">
+        <item>origin</item>
+        <item>nature</item>
+        <item>clean</item>
+        <item>vivid</item>
+        <item>fresh</item>
+        <item>sweety</item>
+        <item>rosy</item>
+        <item>lolita</item>
+        <item>sunset</item>
+        <item>grass</item>
+        <item>coral</item>
+        <item>pink</item>
+        <item>urban</item>
+        <item>crisp</item>
+        <item>valencia</item>
+        <item>beach</item>
+        <item>vintage</item>
+        <item>rococo</item>
+        <item>walden</item>
+        <item>brannan</item>
+        <item>inkwell</item>
+    </string-array>
+</resources>
