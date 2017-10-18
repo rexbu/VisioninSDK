@@ -33,6 +33,8 @@ public class VSFacer {
         NativeLoad.registJNIMethod(so, "com/visionin/core/VSFacer", "stopShaper", "()V");
         NativeLoad.registJNIMethod(so, "com/visionin/core/VSFacer", "setShapping", "(IF)V");
         NativeLoad.registJNIMethod(so, "com/visionin/core/VSFacer", "emotion", "(II)Z");
+        NativeLoad.registJNIMethod(so, "com/visionin/core/VSFacer", "getFaceCount", "()I");
+        NativeLoad.registJNIMethod(so, "com/visionin/core/VSFacer", "getFaceRect", "(I)[F");
 //
 //        NativeLoad.registJNIMethod(so, "com/visionin/core/VSFacer", "setMarker", "(Z)V");
 //        NativeLoad.registJNIMethod(so, "com/visionin/core/VSFacer", "getFacerMarks", "()[F");
@@ -118,6 +120,19 @@ public class VSFacer {
      * @return
      */
     public static native boolean emotion(int cmd, int index);
+
+    /**
+     * 获取人脸数量
+     * @return
+     */
+    public static native int getFaceCount();
+
+    /**
+     * 获取人脸的位置
+     * @param i 第几个人脸
+     * @return 坐标，分别为x,y,width,height
+     */
+    public static native float[] getFaceRect(int i);
 
     // 人脸追踪需要调整的角度
     public static final int FACER_CLOCKWISE_0 = 0;

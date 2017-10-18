@@ -123,6 +123,8 @@ public class TextureActivity extends Activity implements SurfaceHolder.Callback{
         videoFrame.setYuv420PCallback(new VSRawBytesCallback() {
             @Override
             public void outputBytes(byte[] bytes) {
+                float[] rect = VSFacer.getFaceRect(0);
+                Log.e("Rect", "rect:"+rect[0]+","+rect[1]+","+rect[2]+","+rect[3]);
                 // 表情
                 if (VSFacer.emotion(VSFacer.VS_EMOTION_OPEN_MOUTH, 0)){
                     Log.e("Emotion", "OpenMouth!!!");

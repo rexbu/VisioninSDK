@@ -1,0 +1,47 @@
+[
+    {
+        "outputFile": "/Users/Visionin/project/Apple/VisioninSDK/demo/android/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values/values.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 55,
+                    "endLine": 24,
+                    "endColumn": 19,
+                    "endOffset": 689
+                },
+                "from": {
+                    "file": "/Users/Visionin/project/Apple/VisioninSDK/demo/android/app/src/main/res/values/strings.xml",
+                    "position": {
+                        "startLine": 3,
+                        "startColumn": 4,
+                        "startOffset": 103,
+                        "endLine": 25,
+                        "endColumn": 19,
+                        "endOffset": 737
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 25,
+                    "startColumn": 4,
+                    "startOffset": 694,
+                    "endColumn": 47,
+                    "endOffset": 737
+                },
+                "from": {
+                    "file": "/Users/Visionin/project/Apple/VisioninSDK/demo/android/app/src/main/res/values/strings.xml",
+                    "position": {
+                        "startLine": 2,
+                        "startColumn": 4,
+                        "startOffset": 55,
+                        "endColumn": 47,
+                        "endOffset": 98
+                    }
+                }
+            }
+        ]
+    }
+]

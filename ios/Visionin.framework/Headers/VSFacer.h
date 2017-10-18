@@ -25,7 +25,10 @@
 // 开启人脸追踪
 -(void)startFaceTracking;
 -(void)stopFaceTracking;
-
+// 返回人脸数量
+-(int)getFaceCount;
+// 返回人脸位置
+-(gpu_rect_t)getFaceRect:(int)i;
 // 返回第i个人脸68点关键点，无人脸返回NULL。
 -(float*)getFacerMarks:(int)i;
 // 返回第i个人脸的3维角度，分别用3个float表示，分别为水平转角度、俯仰角、旋转角，无人脸返回NULL
