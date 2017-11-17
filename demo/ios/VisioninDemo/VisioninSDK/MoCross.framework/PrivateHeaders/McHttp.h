@@ -13,11 +13,6 @@
 #include <string>
 #include <vector>
 
-#ifdef __ANDROID__
-#include <jni.h>
-extern JavaVM* g_jvm;
-#endif
-
 using namespace std;
 /* http头 */
 typedef pair_t(string_t, string_t)  http_header_t;
