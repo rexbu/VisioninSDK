@@ -129,6 +129,10 @@ public class TextureActivity extends Activity implements SurfaceHolder.Callback{
                 if (VSFacer.emotion(VSFacer.VS_EMOTION_OPEN_MOUTH, 0)){
                     Log.e("Emotion", "OpenMouth!!!");
                 }
+                float[] angle = VSFacer.getFacer3DAngle(0);
+                if (angle!=null){
+                    Log.e("3DAngle", "摇头:"+angle[0]+" 点头:"+angle[1]+" 歪头:"+angle[2]);
+                }
                 imageView.setImageBitmap(yuv420p2RGBABitmap(bytes, 360, 640));
             }
         });
