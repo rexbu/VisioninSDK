@@ -1,20 +1,19 @@
 package com.visionin.core;
 
-import android.app.Activity;
+import android.annotation.SuppressLint;
 import android.content.Context;
 
 import com.rex.load.NativeLoad;
 import com.rex.utils.DeviceUtil;
 import com.rex.utils.FileUtil;
 
-import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.InputStreamReader;
 import java.io.OutputStream;
 
 /**
- * Created by Visionin on 16/9/10.
+ * @date 16/9/10 11:49 PM
+ * @author Visionin
  */
 public class VSFacer {
     static {
@@ -27,6 +26,7 @@ public class VSFacer {
         NativeLoad.registJNIMethod(so, "com/visionin/core/VSFacer", "stopFacerTracking", "()V");
         NativeLoad.registJNIMethod(so, "com/visionin/core/VSFacer", "isFacerTracking", "()Z");
         NativeLoad.registJNIMethod(so, "com/visionin/core/VSFacer", "getFacerMarks", "(I)[F");
+        NativeLoad.registJNIMethod(so, "com/visionin/core/VSFacer", "getFacer3DAngle", "(I)[F");
         NativeLoad.registJNIMethod(so, "com/visionin/core/VSFacer", "trackFacer", "([BIII)I");
 
         NativeLoad.registJNIMethod(so, "com/visionin/core/VSFacer", "startShaper", "()V");
@@ -35,16 +35,13 @@ public class VSFacer {
         NativeLoad.registJNIMethod(so, "com/visionin/core/VSFacer", "emotion", "(II)Z");
         NativeLoad.registJNIMethod(so, "com/visionin/core/VSFacer", "getFaceCount", "()I");
         NativeLoad.registJNIMethod(so, "com/visionin/core/VSFacer", "getFaceRect", "(I)[F");
-//
-//        NativeLoad.registJNIMethod(so, "com/visionin/core/VSFacer", "setMarker", "(Z)V");
-//        NativeLoad.registJNIMethod(so, "com/visionin/core/VSFacer", "getFacerMarks", "()[F");
     }
 
     public static boolean initialize(Context context){
         InputStream is = null;
         try {
             is = context.getResources().getAssets().open("facer.model");
-            OutputStream os = FileUtil.fileOutputStream("/data/data/"+ DeviceUtil.getPackageName(context) +"/__resource/facer.model");
+            @SuppressLint("SdCardPath") OutputStream os = FileUtil.fileOutputStream("/data/data/"+ DeviceUtil.getPackageName(context) +"/__resource/facer.model");
             FileUtil.write(os, is);
 
             return loadFacerPath(null, null);
@@ -54,19 +51,19 @@ public class VSFacer {
         }
     }
 
-    public static boolean initialize(String model, String lisence){
-        return loadFacerPath(model, lisence);
+    public static boolean initialize(String model, String license){
+        return loadFacerPath(model, license);
     }
 
-    protected static native boolean loadFacerBuffer(String path, byte[] lisence);
+    protected static native boolean loadFacerBuffer(String path, byte[] license);
 
     /**
      * 加载人脸资源
      * @param path
-     * @param lisence
+     * @param license
      * @return
      */
-    protected static native boolean loadFacerPath(String path, String lisence);
+    protected static native boolean loadFacerPath(String path, String license);
 
     /**
      * 销毁人脸资源
@@ -122,6 +119,12 @@ public class VSFacer {
     public static native boolean emotion(int cmd, int index);
 
     /**
+     * 人脸3个角度获取
+     * @param index
+     * @return 分别为水平转角(摇头)、俯仰角(点头)、旋转角(歪头)
+     */
+    public static native float[] getFacer3DAngle(int index);
+    /**
      * 获取人脸数量
      * @return
      */
@@ -147,10 +150,6 @@ public class VSFacer {
     // 鼻子暂时未生效，将来生效
     public static final int SHAPER_CMD_NOSE = 4;
     public static final int SAHPER_CMD_CHEEK = 5;
-//    public native void setShaping(int cmd, float strength);
-//
-//    public native void setMarker(boolean flag);
-//    public native float[] getFacerMarks();
 
     // 表情
     public static final int VS_EMOTION_BLINK_EYE = 0x00000002;  // 眨眼

@@ -3,15 +3,22 @@ package com.rex.utils;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 
-import java.io.*;
+import java.io.ByteArrayOutputStream;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipInputStream;
 
 /**
- * Created by Rex on 14-5-5.
+ * @date 14-5-5 2:12 PM
+ * @author Rex
  */
 public class FileUtil {
-    public static InputStream fileInputStream(String filePath) throws IOException{
+    public static InputStream fileInputStream(String filePath) throws IOException {
         File file = new File(filePath);
         if(file.exists()){
             return new FileInputStream(file);
@@ -110,12 +117,7 @@ public class FileUtil {
 
     public static boolean exists(String pathString){
         File f = new File(pathString);
-        if(!f.exists()){
-            return false;
-        }
-        else{
-            return true;
-        }
+        return f.exists();
     }
 
     public static void writeImage(Bitmap bitmap, OutputStream fileOutputStream){
@@ -130,28 +132,25 @@ public class FileUtil {
     public static Bitmap readPNG(String path){
         BitmapFactory.Options options = new BitmapFactory.Options();
         options.inScaled = false;
-        Bitmap b =  BitmapFactory.decodeFile(path, options);
-        return b;
-    }
-
-    public static Bitmap readImage(byte[] bytes){
-        BitmapFactory.Options options = new BitmapFactory.Options();
-        options.inScaled = false;
-        Bitmap b = BitmapFactory.decodeByteArray(bytes, 0, bytes.length, options);
-        return b;
-    }
-    public static Bitmap readImage(String path){
-        BitmapFactory.Options options = new BitmapFactory.Options();
-        options.inScaled = false;
-        Bitmap b =  BitmapFactory.decodeFile(path, options);
-        return b;
+        return BitmapFactory.decodeFile(path, options);
     }
 
     public static Bitmap readPNG(byte[] bytes){
         BitmapFactory.Options options = new BitmapFactory.Options();
         options.inScaled = false;
-        Bitmap b = BitmapFactory.decodeByteArray(bytes, 0, bytes.length, options);
-        return b;
+        return BitmapFactory.decodeByteArray(bytes, 0, bytes.length, options);
+    }
+
+    public static Bitmap readImage(String path){
+        BitmapFactory.Options options = new BitmapFactory.Options();
+        options.inScaled = false;
+        return BitmapFactory.decodeFile(path, options);
+    }
+
+    public static Bitmap readImage(byte[] bytes){
+        BitmapFactory.Options options = new BitmapFactory.Options();
+        options.inScaled = false;
+        return BitmapFactory.decodeByteArray(bytes, 0, bytes.length, options);
     }
 
     public static boolean unzip(String src, String dest){
@@ -163,6 +162,7 @@ public class FileUtil {
             while ((zipEntry = inZip.getNextEntry()) != null) {
                 szName = zipEntry.getName();
                 if (zipEntry.isDirectory()) {
+                    // get the folder name of the widget
                     szName = szName.substring(0, szName.length() - 1);
                     File folder = new File(dest + "/" + szName);
                     folder.mkdirs();
@@ -170,16 +170,16 @@ public class FileUtil {
 
                     File file = new File(dest + "/" + szName);
                     file.createNewFile();
-
+                    // get the output stream of the file
                     FileOutputStream out = new FileOutputStream(file);
                     int len;
                     byte[] buffer = new byte[1024];
-
+                    // read (len) bytes into buffer
                     while ((len = inZip.read(buffer)) != -1) {
+                        // write (len) byte from buffer at the position 0
                         out.write(buffer, 0, len);
                         out.flush();
                     }
-
                     out.close();
                 }
             }
