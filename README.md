@@ -8,7 +8,7 @@ VisioninSDK是一个移动端的跨平台实时视频处理库，提供了视频
 # 商务合作：
 
 * QQ 80017290
-
+* 开发者中心: http://develop.me-yun.com/
 # 演示视频
 
 [![VisioninSDK演示视频](http://image.tupian114.com/20140417/14291758.png)](http://vsdevelop.oss-cn-beijing.aliyuncs.com/000/VisioninDemo.mp4)
@@ -21,11 +21,11 @@ VisioninSDK是一个移动端的跨平台实时视频处理库，提供了视频
 
 ### 1.1 初始化
 
-#### 添加全局初始化方法，比如在AppDelegate中：
+#### 添加全局初始化方法，初始化方法为异步方法，尽量放在AppDelegate中：
 
 `` [Visionin initialize:@"xxx"];`` 
 
-- 其中xxx为应用的证书，应用证书的获取请联系QQ: 80017290
+- 其中xxx为应用的证书，应用证书的获取请在开发者中心新建应用，或者联系QQ: 80017290
 
 #### 首先，新建VSVideoFrame对象
 
