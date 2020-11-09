@@ -5,10 +5,6 @@ VisioninSDK是一个移动端的跨平台实时视频处理库，提供了视频
 #### _2、如果需要提前接入sdk做效果测试，请将ios工程的bundlid改成和demo一样，然后使用demo的license，安卓把package改成demo一样_
 #### _3、ios sdk只提供了真机测试的库_
 
-# 商务合作：
-
-* QQ 80017290
-* 开发者中心: http://develop.me-yun.com/
 # 演示视频
 
 [![VisioninSDK演示视频](http://image.tupian114.com/20140417/14291758.png)](http://vsdevelop.oss-cn-beijing.aliyuncs.com/000/VisioninDemo.mp4)
